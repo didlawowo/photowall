@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="refresh" content="15" >
+
+    <title>Gumpy</title>
+</head>
+<style>
+    .grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 1em;
+}
+img {
+  width: 100%;
+  height: auto;
+}
+</style>
+<body>
+<div class="grid-container">
+    <div><h1>your event</h1></div>
+{% for img in images %}
+    <div class="item"> <img src="{{ img }}" alt="User Image"></div>
+{% endfor %}
+    </div>
+</body>
+</html>
