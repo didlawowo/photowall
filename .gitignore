@@ -1,4 +1,6 @@
 .idea/
 .venv
-*.jpg
+
 *.pyc
+static
+brut
