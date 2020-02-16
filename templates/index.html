@@ -2,26 +2,71 @@
 <html>
 <head>
     <meta http-equiv="refresh" content="15" >
-
-    <title>Gumpy</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+<link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+    <title>Gumpy Photowall</title>
 </head>
 <style>
-    .grid-container {
+
+.grid-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  grid-gap: 1em;
+  grid-gap: 1px;
 }
 img {
   width: 100%;
   height: auto;
 }
+.bg {
+background: linear-gradient(#696969, black);
+}
+h1, h2, h3 {
+  height: 50px;
+  color: white;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+span {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
+
+  color: white;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.zoom {
+    transition: transform .2s; /* Animation */
+  width: 200px;
+
+  margin: 0 auto;
+}
+
+.zoom:hover {
+  transform: scale(3); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
 </style>
-<body>
+<body class="bg">
+<div >
+    <div><h1>gumpy photowall</h1></div>
+     <div><h2>your event</h2></div>
 <div class="grid-container">
-    <div><h1>your event</h1></div>
+
 {% for img in images %}
-    <div class="item"> <img src="{{ img }}" alt="User Image"></div>
+    <div class="zoom"> <img src="{{ img }}" alt="User Image"></div>
 {% endfor %}
+    <div><span>votre prochaine photo ici !</span></div>
+    </div>
     </div>
 </body>
 </html>

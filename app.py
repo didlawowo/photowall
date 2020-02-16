@@ -1,7 +1,8 @@
 import glob
+import os
+
 from PIL import Image
 from flask import Flask, render_template
-import os
 
 WALL_FOLDER = os.path.join('static', 'photo')
 BRUT_FOLDER = 'brut'
@@ -18,38 +19,27 @@ def diff(first, second):
 @app.route('/index')
 def show_index():
 
-# todo drop path in list
-    listb = glob.glob(os.path.join(BRUT_FOLDER,'*.jpg'))
-    listf = glob.glob(os.path.join(WALL_FOLDER, '*.jpg'))
-    print(len(listb))
-    print(len(listf))
+    listb = glob.glob1(BRUT_FOLDER,'*.jpg')
+    listf = glob.glob1(WALL_FOLDER, '*.jpg')
 
     listt = diff(listb, listf)
-    print(listt)
-    print(len(listt))
+    print(f"found {len(listt)} photo to resize")
+    print(f"liste to resize: {listt}")
+
     for img in listt:
-        print(f"resize {img}")
-        image = Image.open(img)
-        size=(600,600)
+        print(f"resizing {img}")
+        image = Image.open(os.path.join('brut', img))
+        size=(400,400)
         image.thumbnail(size)
-        path_save= img.replace('brut','static/photo')
-        image.save(path_save)
-
-    listf = glob.glob(os.path.join(WALL_FOLDER,'*.jpg'))
+        path_save= ('static/photo')
+        image.save(os.path.join(path_save, img))
 
 
-    return render_template("index.html", images=listf)
 
-@app.route('/render')
-def render():
-    listb = glob.glob(os.path.join(BRUT_FOLDER,'*.jpg'))
-    print(listb)
+    listw = sorted(glob.glob(os.path.join(WALL_FOLDER, '*.jpg')))
 
-    for img in listb:
-        print(img)
-        image = Image.open(img)
-        size=(600,600)
-        image.thumbnail(size)
-        path_save= img.replace('brut','static/photo')
-        image.save(path_save)
-    return 'render ok'
+    return render_template("index.html", images=listw)
+
+
+if __name__ == '__main__':
+  app.run(host='0.0.0.0', port=80)
