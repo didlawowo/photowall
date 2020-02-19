@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta http-equiv="refresh" content="15" >
+    <meta http-equiv="refresh" content="120" >
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
-<link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
     <title>Gumpy Photowall</title>
 </head>
 <style>
@@ -17,6 +16,7 @@
 img {
   width: 100%;
   height: auto;
+   margin: 0 !important;
 }
 .bg {
 background: linear-gradient(#696969, black);
@@ -47,8 +47,12 @@ span {
 .zoom {
     transition: transform .2s; /* Animation */
   width: 200px;
+  margin: 0 auto ;
+}
 
-  margin: 0 auto;
+.logo {
+ padding: 20px;
+ width: 200px;
 }
 
 .zoom:hover {
@@ -57,16 +61,16 @@ span {
 
 </style>
 <body class="bg">
-<div >
-    <div><h1>gumpy photowall</h1></div>
+
+    <div><img class="logo" src="static/logo/GUMPY_logo_blanc.png"/></div>
      <div><h2>your event</h2></div>
 <div class="grid-container">
 
 {% for img in images %}
     <div class="zoom"> <img src="{{ img }}" alt="User Image"></div>
 {% endfor %}
-    <div><span>votre prochaine photo ici !</span></div>
+    <span>votre prochaine photo ici !</span>
     </div>
-    </div>
+
 </body>
 </html>

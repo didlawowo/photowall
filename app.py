@@ -25,6 +25,7 @@ def diff(first, second):
 @app.route('/index')
 def show_index():
     listb = glob.glob1(BRUT_FOLDER, '*.jpg')
+    listu = glob.glob1(UPLOAD_FOLDER, "*.jpg")
     listf = glob.glob1(WALL_FOLDER, '*.jpg')
 
     listt = diff(listb, listf)
@@ -34,10 +35,19 @@ def show_index():
     for img in listt:
         print(f"resizing {img}")
         image = Image.open(os.path.join('brut', img))
-        size = (400, 400)
+        size = (600, 600)
         image.thumbnail(size)
         path_save = ('static/photo')
         image.save(os.path.join(path_save, img))
+
+    for img in listu:
+        print(f"resizing {img}")
+        image = Image.open(os.path.join('static/upload', img))
+        size = (600, 600)
+        image.thumbnail(size)
+        path_save = ('static/photo')
+        image.save(os.path.join(path_save, img))
+
 
     listw = sorted(glob.glob(os.path.join(WALL_FOLDER, '*.jpg')))
 
