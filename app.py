@@ -74,7 +74,7 @@ def upload_file():
             return redirect(request.url)
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
-            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+            file.save(os.path.join(UPLOAD_FOLDER, filename))
             # return redirect(url_for('upload_file', filename=filename))
             return 'file correctly upload'
 
@@ -100,6 +100,12 @@ def gen_qrcode():
     img = qr.make_image(fill_color="black", back_color="#23dda0")
     img.save('static/qrcode/qrcode_test2_2.png')
     return 'ok'
+
+@app.route('/delete/<img>')
+def delete_pic(img):
+    os.unlink(os.path.join(UPLOAD_FOLDER, img))
+    os.unlink(os.path.join(BRUT_FOLDER, img))
+    os.unlink(os.path.join(WALL_FOLDER, img))
 
 @app.after_request
 def add_header(response):
