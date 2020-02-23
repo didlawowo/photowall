@@ -2,6 +2,7 @@
 .venv
 
 *.pyc
-static/photo
-static/upload
+static/photowall/*
+static/upload/*
+static/logo_client/*
 brut

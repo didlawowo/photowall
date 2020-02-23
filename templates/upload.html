@@ -1,0 +1,58 @@
+ <!doctype html>
+    <title>Upload new File</title>
+
+
+<html>
+<head>
+    <!--<meta http-equiv="refresh" content="120" >-->
+    <link rel="shortcut icon" href="{{ url_for('static', filename='logo/favicon.ico') }}">
+    <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+          integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <title>Gumpy Photowall</title>
+</head>
+<style>
+
+
+
+
+
+body {
+font-family: 'Alegreya Sans' ;
+background:   grey;
+}
+
+
+
+ h2 {
+  display: inline ;
+   color: white;
+  text-transform: uppercase underline;
+   text-align: center;
+}
+
+
+
+
+.logo {
+ padding: 30px;
+ width: 200px;
+ display: inline;
+}
+
+
+
+
+
+</style>
+<body>
+
+<div><img class="logo" src="static/logo/GUMPY_blanc.png"/><h2>PhotoWall for fun</h2></div>
+    <h2>Charger une nouvelle photo</h2>
+    <form class="form-inline" method=post enctype=multipart/form-data>
+      <input class="btn btn-primary form-control-file-lg" type=file name=file>
+      <input class="btn btn-warning" type=submit value=Upload>
+    </form>
+
+</body>
+</html>
