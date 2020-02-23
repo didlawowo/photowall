@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta http-equiv="refresh" content="120" >
-    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <!--<meta http-equiv="refresh" content="120" >-->
+    <link rel="shortcut icon" href="{{ url_for('static', filename='logo/favicon.ico') }}">
+    <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+          integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
     <title>Gumpy Photowall</title>
 </head>
 <style>
@@ -11,66 +13,88 @@
 .grid-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  grid-gap: 1px;
+  grid-gap: 2px;
+  padding: 30px;
+
 }
-img {
+
+.thumb {
   width: 100%;
   height: auto;
-   margin: 0 !important;
 }
-.bg {
+
+body {
+font-family: 'Alegreya Sans' ;
 background: linear-gradient(#696969, black);
 }
-h1, h2, h3 {
-  height: 50px;
+
+h1 {
+
+  height: 30px;
   color: white;
   text-transform: uppercase;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+
+   justify-content: center;
   text-align: center;
 }
+
+ h2 {
+  display: inline ;
+   color: white;
+  text-transform: uppercase underline;
+   text-align: center;
+}
+
 
 span {
   display: inline-block;
   vertical-align: middle;
-  line-height: normal;
 
-  color: white;
-  text-transform: uppercase;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
 }
 
 .zoom {
-    transition: transform .2s; /* Animation */
-  width: 200px;
-  margin: 0 auto ;
+   transition: transform .2s; /* Animation */
+   margin: 0 auto ;
 }
 
 .logo {
- padding: 20px;
+ padding: 30px;
  width: 200px;
+ display: inline;
 }
+
+.logo_client {
+ padding: 30px;
+ width: 500px;
+ display: block;
+ margin-left: auto;
+  margin-right: auto;
+ }
 
 .zoom:hover {
   transform: scale(3); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
 }
 
-</style>
-<body class="bg">
 
-    <div><img class="logo" src="static/logo/GUMPY_logo_blanc.png"/></div>
-     <div><h2>your event</h2></div>
+.qrcode {
+height: 160px;
+}
+
+
+
+</style>
+<body>
+
+<div><img class="logo" src="static/logo/GUMPY_blanc.png"/><h2>PhotoWall for fun</h2></div>
+<!--<div><h1>Your Event</h1></div>-->
+<div><img class="logo_client" src="static/logo_client/logo_client.jpg"></div>
 <div class="grid-container">
 
-{% for img in images %}
-    <div class="zoom"> <img src="{{ img }}" alt="User Image"></div>
-{% endfor %}
-    <span>votre prochaine photo ici !</span>
-    </div>
+    {% for img in images %}
+    <div class="zoom "><img src="static/photowall/{{ img }}" class="thumb" alt="User Image"></div>
+    {% endfor %}
+    <div><img class="qrcode" src="/static/qrcode/qr_code.png"></div>>
+</div>
 
 </body>
 </html>
