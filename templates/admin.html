@@ -25,20 +25,18 @@
 
 body {
 font-family: 'Alegreya Sans' ;
-background: linear-gradient( red, #696969);
+background: #7d0d0d
 }
 
 h1 {
-
-  height: 30px;
-  color: white;
-  text-transform: uppercase;
-
-   justify-content: center;
-  text-align: center;
+ margin-top: 10px;
+color: white;
+display: inline;
+vertical-align: middle;
+font-size: xx-large;
 }
 
- h2 {
+ h3 {
   display: inline ;
    color: white;
   text-transform: uppercase underline;
@@ -47,16 +45,11 @@ h1 {
 
 
 
-
-
 .logo {
  padding: 30px;
- width: 200px;
+ height: 100px;
  display: inline;
 }
-
-
-
 
 
 
@@ -64,8 +57,8 @@ h1 {
 </style>
 <body>
 
-<div><img class="logo" src="static/logo/GUMPY_blanc.png"/><h2>Admin page</h2></div>
-<div><h2>Click on image to delete the picture, be carefull ! </h2></div>
+<div><img class="logo" src="static/logo/GUMPY_blanc.png"/><h1>Admin page</h1></div>
+<div class="container"><h3>Cliquer sur une image pour la supprimer, attention pas de restauration possible</h3></div>
  <div class="grid-container">
 
     {% for img in images %}

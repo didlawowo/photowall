@@ -51,7 +51,8 @@ def make_picture():
         path_save = (WALL_FOLDER)
         image.save(os.path.join(path_save, img))
 
-
+    print(listf)
+    print({len(listf)} )
     return  listf
 
 
@@ -90,7 +91,7 @@ def upload_file():
             filename = secure_filename(file.filename)
             file.save(os.path.join(UPLOAD_FOLDER, filename))
             # return redirect(url_for('upload_file', filename=filename))
-            # return 'file correctly upload'
+            logging.info(f'file {filename} correctly upload to {UPLOAD_FOLDER}')
             return redirect("/")
 
     return render_template("upload.html")
@@ -125,7 +126,8 @@ def delete_pic(img):
 
 
     os.unlink(os.path.join(WALL_FOLDER, img))
-    return f'picture {img} deleted '
+    logging.info(f'Picture {img} deleted ')
+    return redirect("/admin")
 
 @app.after_request
 def add_header(response):
@@ -138,4 +140,4 @@ def add_header(response):
     return response
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=80)
+    app.run(host='0.0.0.0', port=8080)

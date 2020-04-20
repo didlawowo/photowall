@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/html">
 <head>
     <!--<meta http-equiv="refresh" content="120" >-->
     <link rel="shortcut icon" href="{{ url_for('static', filename='logo/favicon.ico') }}">
@@ -25,32 +25,20 @@
 
 body {
 font-family: 'Alegreya Sans' ;
-background: linear-gradient(#696969, black);
+/* background: linear-gradient(#696969, #282727) ; */
+ background: #282727
 }
 
 h1 {
-
-  height: 30px;
-  color: white;
-  text-transform: uppercase;
-
-   justify-content: center;
-  text-align: center;
-}
-
- h2 {
-  display: inline ;
-   color: white;
-  text-transform: uppercase underline;
-   text-align: center;
+ margin-top: 10px;
+color: white;
+display: inline;
+vertical-align: middle;
+font-size: xx-large;
 }
 
 
-span {
-  display: inline-block;
-  vertical-align: middle;
 
-}
 
 .zoom {
    transition: transform .2s; /* Animation */
@@ -59,25 +47,38 @@ span {
 
 .logo {
  padding: 30px;
- width: 200px;
+ height: 100px;
  display: inline;
 }
 
-.logo_client {
- padding: 30px;
- width: 500px;
+.client {
+ padding: 20px;
+ height: 100px;
  display: block;
  margin-left: auto;
   margin-right: auto;
  }
 
+.logo_client {
+background: white
+}
 .zoom:hover {
-  transform: scale(3); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+  transform: scale(2); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
 }
 
 
 .qrcode {
-height: 160px;
+
+height: 50px;
+margin-top: 40px;
+margin-left: 60px;
+}
+
+p {
+margin-top:10px;
+text-align:center;
+color: white;
+font-size: large
 }
 
 
@@ -85,15 +86,16 @@ height: 160px;
 </style>
 <body>
 
-<div><img class="logo" src="static/logo/GUMPY_blanc.png"/><h2>PhotoWall for fun</h2></div>
+<div><img class="logo" src="static/logo/GUMPY_blanc.png"/><h1>PhotoWall  </h1></div>
 <!--<div><h1>Your Event</h1></div>-->
-<div><img class="logo_client" src="static/logo_client/logo_client.jpg"></div>
+<div class="logo_client"><img class="client" src="static/logo_client/logo_client.jpg"></div>
 <div class="grid-container">
 
     {% for img in images %}
     <div class="zoom "><img src="static/photowall/{{ img }}" class="thumb" alt="User Image"></div>
     {% endfor %}
-    <div><img class="qrcode" src="/static/qrcode/qr_code.png"></div>>
+    <!--<div><img class="qrcode" src="/static/qrcode/qr_code.png"></div>-->
+    <div><a href="/upload"><img class="qrcode" src="/static/logo/GUMPY_blanc.png"><p>Cliquez pour ajouter une nouvelle photo</p></a> </div>
 </div>
 
 </body>
