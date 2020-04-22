@@ -62,7 +62,7 @@ font-size: xx-large;
  <div class="grid-container">
 
     {% for img in images %}
-     <div ><a href="/delete/{{ img }}" title="please click to delete picture"><img src="static/photowall/{{ img }}" class="thumb" alt="User Image"></a></div>
+     <div ><a href="/delete/{{ img }}" title="please click to delete picture" onClick="return confirm('Merci de confirmer la suppression')"><img src="static/photowall/{{ img }}" class="thumb" alt="User Image"></a></div>
     {% endfor %}
  </div>
 
