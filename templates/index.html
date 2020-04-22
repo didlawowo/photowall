@@ -13,7 +13,7 @@
 .grid-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  grid-gap: 2px;
+  grid-gap: 10px;
   padding: 30px;
 
 }
@@ -21,56 +21,59 @@
 .thumb {
   width: 100%;
   height: auto;
+  border-radius: 3%
 }
 
 body {
 font-family: 'Alegreya Sans' ;
-/* background: linear-gradient(#696969, #282727) ; */
- background: #282727
-}
-
-h1 {
- margin-top: 10px;
-color: white;
-display: inline;
-vertical-align: middle;
-font-size: xx-large;
+background: #282727
 }
 
 
 
 
 .zoom {
-   transition: transform .2s; /* Animation */
-   margin: 0 auto ;
+ transition: transform .2s; /* Animation */
+ margin: 0 auto ;
 }
+
 
 .logo {
  padding: 30px;
- height: 100px;
- display: inline;
+ height: 120px;
+
 }
+
 
 .client {
  padding: 20px;
  height: 100px;
  display: block;
  margin-left: auto;
-  margin-right: auto;
+ margin-right: auto;
  }
 
 .logo_client {
-background: white
+ background: white
 }
+
+
+.header {
+ width: 100%;
+margin-top: 10px;
+color: white;
+font-size: xxx-large;
+margin-left:30%
+}
+
 .zoom:hover {
   transform: scale(2); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
 }
 
 
-.qrcode {
-
+.mini {
 height: 50px;
-margin-top: 40px;
+margin-top: 30px;
 margin-left: 60px;
 }
 
@@ -86,7 +89,7 @@ font-size: large
 </style>
 <body>
 
-<div><img class="logo" src="static/logo/GUMPY_blanc.png"/><h1>PhotoWall  </h1></div>
+<div ><img class="logo" src="static/logo/GUMPY_blanc.png"/><span class="header">Photo Wall </span></div>
 <!--<div><h1>Your Event</h1></div>-->
 <div class="logo_client"><img class="client" src="static/logo_client/logo_client.jpg"></div>
 <div class="grid-container">
@@ -95,7 +98,7 @@ font-size: large
     <div class="zoom "><img src="static/photowall/{{ img }}" class="thumb" alt="User Image"></div>
     {% endfor %}
     <!--<div><img class="qrcode" src="/static/qrcode/qr_code.png"></div>-->
-    <div><a href="/upload"><img class="qrcode" src="/static/logo/GUMPY_blanc.png"><p>Cliquez pour ajouter une nouvelle photo</p></a> </div>
+    <div><a href="/upload"><img class="mini" src="/static/logo/GUMPY_blanc.png"><p>Cliquez pour ajouter une nouvelle photo</p></a> </div>
 </div>
 
 </body>
