@@ -1,5 +1,5 @@
 import glob
-import logging
+from loguru import logger
 import os
 
 import qrcode as qrcode
@@ -162,7 +162,7 @@ def upload_file():
             filename = secure_filename(file.filename)
             file.save(os.path.join(UPLOAD_FOLDER, filename))
             # return redirect(url_for('upload_file', filename=filename))
-            logging.info(f'file {filename} correctly upload to {UPLOAD_FOLDER}')
+            logger.info(f'file {filename} correctly upload to {UPLOAD_FOLDER}')
             resize_picture(FROM_FOLDER=UPLOAD_FOLDER, img=filename)
             return redirect("/")
 
@@ -177,14 +177,14 @@ def delete_pic(img):
     try:
         os.unlink(os.path.join(UPLOAD_FOLDER, img))
     except Exception as e:
-        logging.debug(e)
+        logger.debug(e)
     try:
         os.unlink(os.path.join(DSLR_FOLDER, img))
     except Exception as e:
-        logging.debug(e)
+        logger.debug(e)
 
     os.unlink(os.path.join(WALL_FOLDER, img))
-    logging.info(f'Picture {img} deleted ')
+    logger.info(f'Picture {img} deleted ')
     return redirect("/admin")
 
 

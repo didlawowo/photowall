@@ -1,0 +1,5 @@
+*/.venv*
+.gitignore
+gigawall.ps1
+README.md
+setup.*
