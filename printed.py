@@ -1,3 +1,6 @@
+import qrcode
+from . import app
+
 @app.route('/print/<file_name>')
 def print_picture(file_name):
     import win32print
@@ -77,3 +80,17 @@ def print_picture(file_name):
     hDC.EndPage()
     hDC.EndDoc()
     hDC.DeleteDC()
+
+@app.route('/qrcode/<data>')
+def gen_qrcode(data):
+    qr = qrcode.QRCode(
+        version=1,
+        error_correction=qrcode.constants.ERROR_CORRECT_H,
+        box_size=12,
+        border=3
+    )
+    qr.add_data(data)
+    qr.make()
+    img = qr.make_image(fill_color="black", back_color="white")
+    img.save('static/qrcode/qr_code.png')
+    return f'qr_code generate for {data}'

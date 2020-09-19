@@ -1,19 +1,16 @@
 import glob
-from loguru import logger
 import os
-
-import qrcode as qrcode
-from PIL import Image
-from flask import Flask, flash, request, redirect, render_template, config
-from werkzeug.utils import secure_filename
 from pathlib import Path
 
-WALL_FOLDER = 'static/photowall'
-UPLOAD_FOLDER = 'static/upload/'
+from PIL import Image
+from flask import Flask, flash, request, redirect, render_template, config
+from loguru import logger
+from werkzeug.utils import secure_filename
 
-ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
+static = 'static'
+ALLOWED_EXTENSIONS = {'png', 'jpg', 'JPG', 'jpeg', 'gif'}
 
-app = Flask(__name__, static_folder="static", template_folder='templates' )
+app = Flask(__name__, static_folder=static, template_folder='templates' )
 cfg = config.Config('')
 cfg.from_pyfile(os.path.abspath('app_conf.py'))
 logger.debug(cfg)
@@ -27,7 +24,23 @@ if dp:
 else:
     DSLR_PATH = Path(app.config['DSLR_PATH'])
 
+WALL_FOLDER = Path(static / 'photowall')
+UPLOAD_FOLDER = Path(static /'upload')
+
+
+if not os.path.exists(WALL_FOLDER):
+    os.makedirs(WALL_FOLDER)
+
+if not os.path.exists(UPLOAD_FOLDER):
+    os.makedirs(UPLOAD_FOLDER)
+
+
 DSLR_FOLDER = Path(DSLR_PATH / ed /"Originals")
+
+
+if not os.path.exists(DSLR_FOLDER):
+    logger.critical(f'dslr folder not exist : {DSLR_FOLDER}')
+    exit(1)
 logger.info(f'dslr folder:{DSLR_FOLDER}')
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
@@ -58,11 +71,15 @@ def make_picture(FROM_FOLDER):
 
 
 def resize_picture(FROM_FOLDER, img):
-    image = Image.open(os.path.join(FROM_FOLDER, img))
-    size = (600, 600)
-    image.thumbnail(size)
-    path_save = (WALL_FOLDER)
-    image.save(os.path.join(path_save, img))
+    try:
+        image = Image.open(os.path.join(FROM_FOLDER, img))
+        size = (600, 600)
+        image.thumbnail(size)
+        path_save = (WALL_FOLDER)
+        image.save(os.path.join(path_save, img))
+        logger.success(f'image {img} saveed')
+    except Exception as e:
+        logger.error(e)
 
 
 @app.route('/')
@@ -127,19 +144,6 @@ def delete_pic(img):
     return redirect("/admin")
 
 
-@app.route('/qrcode/<data>')
-def gen_qrcode(data):
-    qr = qrcode.QRCode(
-        version=1,
-        error_correction=qrcode.constants.ERROR_CORRECT_H,
-        box_size=12,
-        border=3
-    )
-    qr.add_data(data)
-    qr.make()
-    img = qr.make_image(fill_color="black", back_color="white")
-    img.save('static/qrcode/qr_code.png')
-    return f'qr_code generate for {data}'
 
 
 @app.after_request
