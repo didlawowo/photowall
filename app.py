@@ -4,25 +4,39 @@ import os
 
 import qrcode as qrcode
 from PIL import Image
-from flask import Flask, flash, request, redirect, render_template
+from flask import Flask, flash, request, redirect, render_template, config
 from werkzeug.utils import secure_filename
+from pathlib import Path
 
-WALL_FOLDER = "static/photowall"
-DSLR_FOLDER = 'brut'
+WALL_FOLDER = 'static/photowall'
 UPLOAD_FOLDER = 'static/upload/'
+DSLR_FOLDER = 'static/brut'
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
 
 app = Flask(__name__)
+cfg = config.Config('')
+cfg.from_pyfile(os.path.abspath('app_conf.py'))
+logger.debug(cfg)
+app.config.update(cfg)
+dp = os.getenv('DSLR_PATH')
+ed = os.getenv('EVENT_DIR')
+if dp :
+    DSLR_FOLDER = Path(dp / ed)
+else:
+    DSLR_FOLDER = Path(app.config['DSLR_PATH'])
+DSLR_FOLDER = DSLR_FOLDER / ed
+logger.info(DSLR_FOLDER)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+
 app.secret_key = 'super secret key'
 app.config['SESSION_TYPE'] = 'filesystem'
-
+logger.debug(app.config)
 
 def diff(first, second):
     second = set(second)
     return [item for item in first if item not in second]
 
-@app.route('/print/<img>')
+@app.route('/print/<file_name>')
 def print_picture(file_name):
     import win32print
     import win32ui
