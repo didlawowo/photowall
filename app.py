@@ -24,8 +24,8 @@ if dp:
 else:
     DSLR_PATH = Path(app.config['DSLR_PATH'])
 
-WALL_FOLDER = Path(static / 'photowall')
-UPLOAD_FOLDER = Path(static /'upload')
+WALL_FOLDER = os.path.abspath('static/photowall')
+UPLOAD_FOLDER = os.path.abspath('static/upload')
 
 
 if not os.path.exists(WALL_FOLDER):
