@@ -89,9 +89,11 @@ font-size: large
 </style>
 <body>
 
-<div ><img class="logo" src="static/logo/GUMPY_blanc.png"/><span class="header">Photo Wall </span></div>
+<div ><img class="logo" src="static/logo/GUMPY_blanc.png" alt="logo"/><span class="header">Photo Wall </span></div>
 <!--<div><h1>Your Event</h1></div>-->
-<div class="logo_client"><img class="client" src="static/logo_client/logo_client.jpg"></div>
+{% if logo_client %}
+<div class="logo_client"><img class="client" src="static/logo_client/logo_client.jpg" alt="logo"></div>
+{% endif %}
 <div class="grid-container">
 
     {% for img in images %}
