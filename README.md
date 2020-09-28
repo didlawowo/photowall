@@ -6,7 +6,14 @@ export DSLR_PATH="."
 export EVENT_DIR=example    
 flask run
 
+# install
+pip install -r requirements.txt
+
+# config
+copy app_conf_example.py to app_conf.py
+
+
 
 # mode prod
-set EVENT_DIR=OREAL
-python app.py
+change auto_start.cmd
+run auto_start.cmd
