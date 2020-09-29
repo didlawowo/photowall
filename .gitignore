@@ -6,5 +6,6 @@ static/photowall/*
 static/upload/*
 static/logo_client/*
 
-start.cmd
+start_dev.cmd
 app_conf.py
+auto_start.cmd
