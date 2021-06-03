@@ -1,0 +1,25 @@
+version: "3.7"
+
+services:
+
+  gigawall:
+    image: "fizzbuzz2/python:gigawall"
+    container_name: "gigawall"
+    hostname: "gigawall"
+    labels:
+      - traefik.enable=true
+      - traefik.http.middlewares.gigawall-redirect-web-secure.redirectscheme.scheme=https
+      - traefik.http.routers.gigawall-web.middlewares=gigawall-redirect-web-secure
+      - traefik.http.routers.gigawall-web.rule=Host(`gigawall.$MY_DOMAIN`)
+      - traefik.http.routers.gigawall-web.entrypoints=web
+      - "traefik.http.routers.gigawall.entrypoints=websecure"
+      - "traefik.http.routers.gigawall.rule=Host(`gigawall.$MY_DOMAIN`)"
+      - "traefik.http.routers.gigawall.tls.certresolver=myresolver"
+      - "traefik.http.routers.gigawall.tls=true"
+
+
+
+networks:
+  default:
+    external:
+      name: $DEFAULT_NETWORK
