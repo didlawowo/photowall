@@ -6,20 +6,15 @@ services:
     image: "fizzbuzz2/python:gigawall"
     container_name: "gigawall"
     hostname: "gigawall"
+    restart: always
+    ports:
+      - 8081:8080
     labels:
       - traefik.enable=true
-      - traefik.http.middlewares.gigawall-redirect-web-secure.redirectscheme.scheme=https
-      - traefik.http.routers.gigawall-web.middlewares=gigawall-redirect-web-secure
-      - traefik.http.routers.gigawall-web.rule=Host(`gigawall.$MY_DOMAIN`)
-      - traefik.http.routers.gigawall-web.entrypoints=web
-      - "traefik.http.routers.gigawall.entrypoints=websecure"
-      - "traefik.http.routers.gigawall.rule=Host(`gigawall.$MY_DOMAIN`)"
-      - "traefik.http.routers.gigawall.tls.certresolver=myresolver"
-      - "traefik.http.routers.gigawall.tls=true"
+      - traefik.http.routers.gigawall.rule=Host(`gigawall.$MY_DOMAIN`)
+      - traefik.http.routers.gigawall.entrypoints=websecure
+      - traefik.http.routers.gigawall.tls.certresolver=myresolver
+      - traefik.http.routers.gigawall.service=gigawall
+      - traefik.http.services.gigawall.loadbalancer.server.port=8080
 
 
-
-networks:
-  default:
-    external:
-      name: $DEFAULT_NETWORK
