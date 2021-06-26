@@ -1,5 +1,5 @@
 .idea/
-.venv2
+.venv
 
 *.pyc
 static/photowall/*
