@@ -44,7 +44,7 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 app.secret_key = 'super secret key'
 app.config['SESSION_TYPE'] = 'filesystem'
-logger.debug(app.config)
+
 logo_client = "static/logo_client/logo.jpg"
 
 if not os.path.exists(logo_client):
@@ -62,8 +62,8 @@ def make_picture(client_folder):
     listw = glob.glob1(WALL_FOLDER, '*.jpg')
 
     listt = diff(listf, listw)
-    logger.info(f"found {len(listt)} from {client_folder} to resize")
-    logger.info(f"liste to resize: {listt}")
+    logger.info(f"Found {len(listt)} from {client_folder} to resize")
+    logger.info(f"list to resize: {listt}")
 
     for img in listt:
         logger.info(f"Resizing {img}")
@@ -88,8 +88,8 @@ def resize_picture(FROM_FOLDER, img):
 @app.route('/index')
 def show_index():
     make_picture(client_folder)
-    listw = glob.glob1(WALL_FOLDER, '*.jpg')
-    return render_template("index.html", images=listw)
+    list_image_photowall = glob.glob1(WALL_FOLDER, '*.jpg')
+    return render_template("index.html", images=list_image_photowall, logo_client=logo_client)
 
 
 @app.route('/admin')

@@ -39,21 +39,18 @@
     .logo {
         padding: 30px;
         height: 120px;
-
     }
 
 
     .client {
         padding: 20px;
-        height: 100px;
+        height: 150px;
         display: block;
         margin-left: auto;
         margin-right: auto;
     }
 
-    .logo_client {
-        background: white
-    }
+
 
 
     .header {
@@ -87,18 +84,16 @@
 </style>
 <body>
 
-<div><img class="logo" src="static/logo/GUMPY_gris.jpg" alt="logo"/>
-    <!--<span class="header">Photo Wall </span></div>-->
-    <!--<div><h1>Your Event</h1></div>-->
+<div>
+
     {% if logo_client %}
-        <div class="logo_client"><img class="client" src="static/logo_client/logo.jpg" alt="logo"></div>
+       <img class="client" src="/static/logo_client/logo.jpg" alt="logo">
     {% endif %}
     <div class="grid-container">
 
         {% for img in images %}
             <div class="zoom "><img src="static/photowall/{{ img }}" class="thumb" alt="User Image"></div>
         {% endfor %}
-        <!--<div><img class="qrcode" src="/static/qrcode/qr_code.png"></div>-->
         <div><a href="/upload"><img class="mini" src="/static/logo/GUMPY_gris.jpg">
             <p>Cliquez pour ajouter une nouvelle photo</p></a></div>
     </div>
