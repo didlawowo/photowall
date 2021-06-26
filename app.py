@@ -10,23 +10,23 @@ from werkzeug.utils import secure_filename
 static = 'static'
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'JPG', 'jpeg', 'gif'}
 
-app = Flask(__name__, static_folder=static, template_folder='templates' )
+app = Flask(__name__, static_folder=static, template_folder='templates')
 cfg = config.Config('')
 cfg.from_pyfile(os.path.abspath('app_conf.py'))
 logger.debug(cfg)
 app.config.update(cfg)
-dp = os.getenv('DSLR_PATH')
-ed = os.getenv('EVENT_DIR')
-logger.debug(dp)
-if dp:
-    logger.info("dslr path set, use from env config")
-    DSLR_PATH = Path(dp)
+
+if os.getenv('FLASK_ENV') =='development':
+    event_name = Path("example")
+    dslr_path = Path(".")
 else:
-    DSLR_PATH = Path(app.config['DSLR_PATH'])
+    event_name = Path(app.config['EVENT_NAME'])
+    dslr_path = Path(app.config['DSLR_PATH'])
+
 
 WALL_FOLDER = os.path.abspath('static/photowall')
 UPLOAD_FOLDER = os.path.abspath('static/upload')
-
+LOGO_FOLDER = os.path.abspath('static/logo_client')
 
 if not os.path.exists(WALL_FOLDER):
     os.makedirs(WALL_FOLDER)
@@ -34,38 +34,44 @@ if not os.path.exists(WALL_FOLDER):
 if not os.path.exists(UPLOAD_FOLDER):
     os.makedirs(UPLOAD_FOLDER)
 
+if not os.path.exists(LOGO_FOLDER):
+    os.makedirs(UPLOAD_FOLDER)
 
-DSLR_FOLDER = Path(DSLR_PATH / ed /"Originals")
+client_folder = Path(dslr_path / event_name / "Originals")
 
-
-if not os.path.exists(DSLR_FOLDER):
-    logger.critical(f'dslr folder not exist : {DSLR_FOLDER}')
+if not os.path.exists(client_folder):
+    logger.critical(f'client folder not exist, exit program : {client_folder}')
     exit(1)
-logger.info(f'dslr folder:{DSLR_FOLDER}')
+
+logger.info(f'client folder:{client_folder}')
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 app.secret_key = 'super secret key'
 app.config['SESSION_TYPE'] = 'filesystem'
-logger.debug(app.config)
-logo_client="static/logo_client/logo.jpg"
+
+logo_client = os.path.abspath("static/logo_client/logo.jpg")
+
+if not os.path.exists(logo_client):
+    logger.critical(f'client logo not exist, exit program : {logo_client}')
+    exit(1)
+
 
 def diff(first, second):
     second = set(second)
     return [item for item in first if item not in second]
 
 
-def make_picture(FROM_FOLDER):
-
-    listf = glob.glob1(FROM_FOLDER, "*.jpg")
+def make_picture(client_folder):
+    listf = glob.glob1(client_folder, "*.jpg")
     listw = glob.glob1(WALL_FOLDER, '*.jpg')
 
     listt = diff(listf, listw)
-    logger.info(f"found {len(listt)} from {FROM_FOLDER} to resize")
-    logger.info(f"liste to resize: {listt}")
+    logger.info(f"Found {len(listt)} from {client_folder} to resize")
+    logger.info(f"list to resize: {listt}")
 
     for img in listt:
         logger.info(f"Resizing {img}")
-        resize_picture(FROM_FOLDER, img)
+        resize_picture(client_folder, img)
 
     return listw
 
@@ -85,14 +91,14 @@ def resize_picture(FROM_FOLDER, img):
 @app.route('/')
 @app.route('/index')
 def show_index():
-    make_picture(DSLR_FOLDER)
-    listw=glob.glob1(WALL_FOLDER, '*.jpg')
-    return render_template("index.html", images=listw)
+    make_picture(client_folder)
+    list_image_photowall = glob.glob1(WALL_FOLDER, '*.jpg')
+    return render_template("index.html", images=list_image_photowall, logo_client=logo_client)
 
 
 @app.route('/admin')
 def show_admin():
-    listw=glob.glob1(WALL_FOLDER, '*.jpg')
+    listw = glob.glob1(WALL_FOLDER, '*.jpg')
     return render_template("admin.html", images=listw)
 
 
@@ -125,7 +131,6 @@ def upload_file():
     return render_template("upload.html")
 
 
-
 @app.route('/delete/<img>')
 def delete_pic(img):
     img = img.split('/')[-1]
@@ -135,15 +140,13 @@ def delete_pic(img):
     except Exception as e:
         logger.debug(e)
     try:
-        os.unlink(os.path.join(DSLR_FOLDER, img))
+        os.unlink(os.path.join(client_folder, img))
     except Exception as e:
         logger.debug(e)
 
     os.unlink(os.path.join(WALL_FOLDER, img))
     logger.info(f'Picture {img} deleted ')
     return redirect("/admin")
-
-
 
 
 @app.after_request

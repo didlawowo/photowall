@@ -1,0 +1,26 @@
+version: "3.7"
+
+services:
+
+  gigawall:
+    context: .
+      build: Dockerfile
+    image: "fizzbuzz2/python:gigawall"
+    container_name: "gigawall"
+    hostname: "gigawall"
+    restart: always
+    ports:
+      - 8081:8080
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.gigawall.rule=Host(`gigawall.dc-consulting.pro`)
+      - traefik.http.routers.gigawall.entrypoints=websecure
+      - traefik.http.routers.gigawall.tls.certresolver=myresolver
+      - traefik.http.routers.gigawall.service=gigawall
+      - traefik.http.services.gigawall.loadbalancer.server.port=8080
+
+networks:
+  default:
+    external:
+      name: gateway
+

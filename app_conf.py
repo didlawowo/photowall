@@ -1,2 +1,3 @@
 
-DSLR_PATH='C:\\Users\\gumpy1\\Pictures\\dslrBooth'
+DSLR_PATH='C:\\Users\\gumpy\\Pictures\\dslrBooth'
+EVENT_NAME='test2'

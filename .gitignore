@@ -1,12 +1,12 @@
 .idea/
-.venv2
+.venv
 
 *.pyc
 static/photowall/*
 static/upload/*
 static/logo_client/*
 
-start_dev.cmd
+start_dev.sh
 app_conf.py
 auto_start.cmd
-auto_start.cmd
+
