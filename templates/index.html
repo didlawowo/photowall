@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/html">
 <head>
-    <meta http-equiv="refresh" content="60" >
+    <meta http-equiv="refresh" content="60">
     <link rel="shortcut icon" href="{{ url_for('static', filename='logo/favicon.ico') }}">
     <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
@@ -10,98 +10,98 @@
 </head>
 <style>
 
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  grid-gap: 10px;
-  padding: 30px;
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        grid-gap: 10px;
+        padding: 30px;
 
-}
+    }
 
-.thumb {
-  width: 100%;
-  height: auto;
-  border-radius: 3%
-}
+    .thumb {
+        width: 100%;
+        height: auto;
+        border-radius: 3%
+    }
 
-body {
-font-family: 'Alegreya Sans' ;
-background: #282727
-}
-
-
+    body {
+        font-family: 'Alegreya Sans';
+        background: #ffffff
+    }
 
 
-.zoom {
- transition: transform .2s; /* Animation */
- margin: 0 auto ;
-}
+    .zoom {
+        transition: transform .2s; /* Animation */
+        margin: 0 auto;
+    }
 
 
-.logo {
- padding: 30px;
- height: 120px;
+    .logo {
+        padding: 30px;
+        height: 120px;
 
-}
-
-
-.client {
- padding: 20px;
- height: 100px;
- display: block;
- margin-left: auto;
- margin-right: auto;
- }
-
-.logo_client {
- background: white
-}
+    }
 
 
-.header {
- width: 100%;
-margin-top: 10px;
-color: white;
-font-size: xxx-large;
-margin-left:30%
-}
+    .client {
+        padding: 20px;
+        height: 100px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
 
-.zoom:hover {
-  transform: scale(2); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
-}
+    .logo_client {
+        background: white
+    }
 
 
-.mini {
-height: 50px;
-margin-top: 30px;
-margin-left: 60px;
-}
+    .header {
+        width: 100%;
+        margin-top: 10px;
+        color: white;
+        font-size: xx-large;
+        margin-left: 30%
+    }
 
-p {
-margin-top:10px;
-text-align:center;
-color: white;
-font-size: large
-}
+    .zoom:hover {
+        transform: scale(2); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+    }
 
+
+    .mini {
+        height: 50px;
+        margin-top: 30px;
+        margin-left: 60px;
+        
+    }
+
+    p {
+        margin-top: 10px;
+        text-align: center;
+        color: #282727;
+        font-size: large
+    }
 
 
 </style>
 <body>
 
-<div ><img class="logo" src="static/logo/GUMPY_blanc.png" alt="logo"/><span class="header">Photo Wall </span></div>
-<!--<div><h1>Your Event</h1></div>-->
-{% if logo_client %}
-<div class="logo_client"><img class="client" src="static/logo_client/logo_client.jpg" alt="logo"></div>
-{% endif %}
-<div class="grid-container">
+<div><img class="logo" src="static/logo/GUMPY_gris.jpg" alt="logo"/>
+    <!--<span class="header">Photo Wall </span></div>-->
+    <!--<div><h1>Your Event</h1></div>-->
+    {% if logo_client %}
+        <div class="logo_client"><img class="client" src="static/logo_client/logo.jpg" alt="logo"></div>
+    {% endif %}
+    <div class="grid-container">
 
-    {% for img in images %}
-    <div class="zoom "><img src="static/photowall/{{ img }}" class="thumb" alt="User Image"></div>
-    {% endfor %}
-    <!--<div><img class="qrcode" src="/static/qrcode/qr_code.png"></div>-->
-    <div><a href="/upload"><img class="mini" src="/static/logo/GUMPY_blanc.png"><p>Cliquez pour ajouter une nouvelle photo</p></a> </div>
+        {% for img in images %}
+            <div class="zoom "><img src="static/photowall/{{ img }}" class="thumb" alt="User Image"></div>
+        {% endfor %}
+        <!--<div><img class="qrcode" src="/static/qrcode/qr_code.png"></div>-->
+        <div><a href="/upload"><img class="mini" src="/static/logo/GUMPY_gris.jpg">
+            <p>Cliquez pour ajouter une nouvelle photo</p></a></div>
+    </div>
 </div>
-
 </body>
 </html>

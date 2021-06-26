@@ -1,6 +1,4 @@
 @echo off
 
-set EVENT_DIR
+cd C:\Users\gumpy\Documents\GitHub\photowall\
 python app.py
-cd C:\Users\gumpy1\Documents\GitHub\photowall\
-python C:\Users\gumpy1\Documents\GitHub\photowall\app.py
