@@ -26,11 +26,15 @@ else:
 
 WALL_FOLDER = os.path.abspath('static/photowall')
 UPLOAD_FOLDER = os.path.abspath('static/upload')
+LOGO_FOLDER = os.path.abspath('static/logo_client')
 
 if not os.path.exists(WALL_FOLDER):
     os.makedirs(WALL_FOLDER)
 
 if not os.path.exists(UPLOAD_FOLDER):
+    os.makedirs(UPLOAD_FOLDER)
+
+if not os.path.exists(LOGO_FOLDER):
     os.makedirs(UPLOAD_FOLDER)
 
 client_folder = Path(dslr_path / event_name / "Originals")
