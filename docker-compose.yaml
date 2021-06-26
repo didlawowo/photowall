@@ -3,6 +3,8 @@ version: "3.7"
 services:
 
   gigawall:
+    context: .
+      build: Dockerfile
     image: "fizzbuzz2/python:gigawall"
     container_name: "gigawall"
     hostname: "gigawall"

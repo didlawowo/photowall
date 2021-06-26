@@ -20,7 +20,7 @@ if os.getenv('FLASK_ENV') =='development':
     event_name = Path("example")
     dslr_path = Path(".")
 else:
-    event_name = app.config('EVENT_NAME')
+    event_name = Path(app.config('EVENT_NAME'))
     dslr_path = Path(app.config['DSLR_PATH'])
 
 
