@@ -45,7 +45,7 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.secret_key = 'super secret key'
 app.config['SESSION_TYPE'] = 'filesystem'
 
-logo_client = "static/logo_client/logo.jpg"
+logo_client = os.path.abspath("static/logo_client/logo.jpg")
 
 if not os.path.exists(logo_client):
     logger.critical(f'client logo not exist, exit program : {logo_client}')
