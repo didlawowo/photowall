@@ -85,7 +85,7 @@ def make_picture(client_folder):
 def resize_picture(FROM_FOLDER, img):
     try:
         image = Image.open(os.path.join(FROM_FOLDER, img))
-        size = (600, 600)
+        size = (2000, 2000)
         image.thumbnail(size)
         path_save = (WALL_FOLDER)
         image.save(os.path.join(path_save, img))

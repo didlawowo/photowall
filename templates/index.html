@@ -27,10 +27,10 @@
         margin-right: auto;
     }
 .cust {
- padding: 30px;
+ padding: 20px;
  margin: auto;
  border-radius: 3%;
- height: 80%
+ 
 }
 
 </style>
@@ -44,11 +44,11 @@
     {% endif %}
     <div id="carouselSimple" class="carousel slide carousel-fade" data-bs-ride="carousel">
         <div class="carousel-inner">
-            <div class="carousel-item active"><img src="static/logo/GUMPY_blanc.png" class="d-block w-100 cust" alt="{{ img }}"></div>
+            <div class="carousel-item active"><img src="static/logo/GUMPY_blanc.png" class="d-block w-100 cust" height="70%" alt="{{ img }}"></div>
 
             {% for img in images %}
             <div class="carousel-item">
-                <img src="static/photowall/{{ img }}" class="d-block w-100 custom " alt="{{ img }}"/>
+                <img src="static/photowall/{{ img }}"  class="d-block w-100 cust" alt="{{ img }}"/>
             </div>
             {% endfor %}
         </div>
