@@ -12,11 +12,11 @@ ALLOWED_EXTENSIONS = {'png', 'jpg', 'JPG', 'jpeg', 'gif'}
 
 app = Flask(__name__, static_folder=static, template_folder='templates')
 cfg = config.Config('')
-cfg.from_pyfile(os.path.abspath('app_conf.py'))
+cfg.from_pyfile(os.path.abspath('conf.py'))
 logger.debug(cfg)
 app.config.update(cfg)
 
-if os.getenv('FLASK_ENV') =='development':
+if os.getenv('FLASK_ENV') == 'development':
     event_name = Path("example")
     dslr_path = Path(".")
 else:
@@ -28,14 +28,18 @@ WALL_FOLDER = os.path.abspath('static/photowall')
 UPLOAD_FOLDER = os.path.abspath('static/upload')
 LOGO_FOLDER = os.path.abspath('static/logo_client')
 
-if not os.path.exists(WALL_FOLDER):
-    os.makedirs(WALL_FOLDER)
+try:
+    logger.info('Checking dir')
+    if not os.path.exists(WALL_FOLDER):
+        os.makedirs(WALL_FOLDER)
 
-if not os.path.exists(UPLOAD_FOLDER):
-    os.makedirs(UPLOAD_FOLDER)
+    if not os.path.exists(UPLOAD_FOLDER):
+        os.makedirs(UPLOAD_FOLDER)
 
-if not os.path.exists(LOGO_FOLDER):
-    os.makedirs(UPLOAD_FOLDER)
+    if not os.path.exists(LOGO_FOLDER):
+        os.makedirs(LOGO_FOLDER)
+except Exception as e:
+    logger.error(e)
 
 client_folder = Path(dslr_path / event_name / "Originals")
 
@@ -49,11 +53,13 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.secret_key = 'super secret key'
 app.config['SESSION_TYPE'] = 'filesystem'
 
-logo_client = os.path.abspath("static/logo_client/logo.jpg")
-
-if not os.path.exists(logo_client):
-    logger.critical(f'client logo not exist, exit program : {logo_client}')
-    exit(1)
+if  os.getenv('FLASK_ENV') == 'development':
+    logo_client = os.path.abspath("static/logo/GUMPY_blanc.png")
+else:
+    logo_client = os.path.abspath("static/logo/client.jpg")
+    if not os.path.exists(logo_client):
+        logger.critical(f'client logo not exist, set gumpy : {logo_client}')
+        logo_client = os.path.abspath("static/logo/GUMPY_blanc.png")
 
 
 def diff(first, second):
@@ -93,6 +99,8 @@ def resize_picture(FROM_FOLDER, img):
 def show_index():
     make_picture(client_folder)
     list_image_photowall = glob.glob1(WALL_FOLDER, '*.jpg')
+    logger.debug(list_image_photowall)
+    logger.debug(logo_client)
     return render_template("index.html", images=list_image_photowall, logo_client=logo_client)
 
 
@@ -161,4 +169,4 @@ def add_header(response):
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8080)
+    app.run(host='0.0.0.0', port=8080, debug=True)

@@ -1,12 +1,14 @@
 .idea/
-.venv
+venv/
+
+
+.venv/
 
 *.pyc
 static/photowall/*
 static/upload/*
 static/logo_client/*
 
-start_dev.sh
-app_conf.py
-auto_start.cmd
 
+
+.DS_Store
