@@ -10,7 +10,7 @@ itsdangerous==1.1.0       # via flask
 jinja2==2.11.2            # via flask
 loguru==0.5.1             # via gigawall (setup.py)
 markupsafe==1.1.1         # via jinja2
-pillow==8.0.0             # via gigawall (setup.py)
+pillow==8.3.2             # via gigawall (setup.py)
 qrcode==6.1               # via gigawall (setup.py)
 six==1.15.0               # via qrcode
 werkzeug==1.0.1           # via flask
