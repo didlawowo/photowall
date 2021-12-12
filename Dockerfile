@@ -4,8 +4,7 @@ RUN mkdir /photowall
 WORKDIR /photowall
 COPY . .
 
-RUN pip install -r requirements.txt \
- && rm -rf requirements.txt
+RUN pipenv install
 
 
 EXPOSE 8080

@@ -1,4 +1,9 @@
 .venv
 .gitignore
-README.md
+*.md
 setup.*
+venv
+docker-compose.yaml
+Dockerfile
+archive
+scripts

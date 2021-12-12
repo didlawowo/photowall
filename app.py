@@ -1,68 +1,25 @@
 import glob
 import os
 from pathlib import Path
+from flask_compress import Compress
 
 from PIL import Image
-from flask import Flask, flash, request, redirect, render_template, config
+from flask import Flask, flash, request, redirect, render_template, config, jsonify
 from loguru import logger
 from werkzeug.utils import secure_filename
 
-static = 'static'
-ALLOWED_EXTENSIONS = {'png', 'jpg', 'JPG', 'jpeg', 'gif'}
 
-app = Flask(__name__, static_folder=static, template_folder='templates')
-cfg = config.Config('')
-cfg.from_pyfile(os.path.abspath('conf.py'))
-logger.debug(cfg)
-app.config.update(cfg)
-
-if os.getenv('FLASK_ENV') == 'development':
-    event_name = Path("example")
-    dslr_path = Path(".")
-else:
-    event_name = Path(app.config['EVENT_NAME'])
-    dslr_path = Path(app.config['DSLR_PATH'])
+def _clear_history():
+    logger.info('Drop old image in photowall')
+    files = glob.glob1(WALL_FOLDER, '*.jpg')
+    logger.debug(files)
+    for f in files:
+        logger.debug(f)
+        os.unlink(os.path.join(WALL_FOLDER, f ))
+    logger.success('Photo Wall dir cleared')
 
 
-WALL_FOLDER = os.path.abspath('static/photowall')
-UPLOAD_FOLDER = os.path.abspath('static/upload')
-LOGO_FOLDER = os.path.abspath('static/logo_client')
-
-try:
-    logger.info('Checking dir')
-    if not os.path.exists(WALL_FOLDER):
-        os.makedirs(WALL_FOLDER)
-
-    if not os.path.exists(UPLOAD_FOLDER):
-        os.makedirs(UPLOAD_FOLDER)
-
-    if not os.path.exists(LOGO_FOLDER):
-        os.makedirs(LOGO_FOLDER)
-except Exception as e:
-    logger.error(e)
-
-client_folder = Path(dslr_path / event_name / "Originals")
-
-if not os.path.exists(client_folder):
-    logger.critical(f'client folder not exist, exit program : {client_folder}')
-    exit(1)
-
-logger.info(f'client folder:{client_folder}')
-app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-
-app.secret_key = 'super secret key'
-app.config['SESSION_TYPE'] = 'filesystem'
-
-if  os.getenv('FLASK_ENV') == 'development':
-    logo_client = os.path.abspath("static/logo/GUMPY_blanc.png")
-else:
-    logo_client = os.path.abspath("static/logo/client.jpg")
-    if not os.path.exists(logo_client):
-        logger.critical(f'client logo not exist, set gumpy : {logo_client}')
-        logo_client = os.path.abspath("static/logo/GUMPY_blanc.png")
-
-
-def diff(first, second):
+def _diff(first, second):
     second = set(second)
     return [item for item in first if item not in second]
 
@@ -71,36 +28,99 @@ def make_picture(client_folder):
     listf = glob.glob1(client_folder, "*.jpg")
     listw = glob.glob1(WALL_FOLDER, '*.jpg')
 
-    listt = diff(listf, listw)
+    listt = _diff(listf, listw)
     logger.info(f"Found {len(listt)} from {client_folder} to resize")
     logger.info(f"list to resize: {listt}")
 
     for img in listt:
         logger.info(f"Resizing {img}")
-        resize_picture(client_folder, img)
+        _resize_picture(client_folder, img)
 
     return listw
 
 
-def resize_picture(FROM_FOLDER, img):
+def _resize_picture(original_folder, img):
+
+    logger.info('Starting resize all image')
     try:
-        image = Image.open(os.path.join(FROM_FOLDER, img))
-        size = (2000, 2000)
-        image.thumbnail(size)
-        path_save = (WALL_FOLDER)
-        image.save(os.path.join(path_save, img))
-        logger.success(f'image {img} saveed')
+        image = Image.open(os.path.join(original_folder, img))
+        size = (2000, 1000)
+        image.thumbnail(size, Image.ANTIALIAS)
+        image.save(os.path.join(WALL_FOLDER, img, ), quality=90, optimize=True)
+        logger.success(f'Image {img} saved')
     except Exception as e:
         logger.error(e)
+
+
+def _allowed_file(filename):
+    return '.' in filename and \
+           filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+
+
+static = 'static'
+ALLOWED_EXTENSIONS = {'png', 'jpg', 'JPG', 'jpeg', 'gif'}
+
+app = Flask(__name__, static_folder=static, template_folder='templates')
+
+if os.getenv('FLASK_ENV') == 'development':
+    logger.debug('development mode detected')
+    event_name = Path("example")
+    dslr_path = Path(".")
+else:
+    logger.debug('production mode detected')
+    event_name = Path(os.environ.get('EVENT'))
+    dslr_path = Path(os.environ.get('DSLR_PATH'))
+
+
+WALL_FOLDER = os.path.abspath('static/photowall')
+UPLOAD_FOLDER = os.path.abspath('static/upload')
+LOGO_FOLDER = os.path.abspath('static/logo_client')
+EVENT_FOLDER = Path(dslr_path / event_name / "Originals")
+
+
+_clear_history()
+
+if os.getenv('FLASK_ENV') == 'development':
+    logo_client = os.path.abspath("static/logo/gumpy_transparent.png")
+else:
+    logo_client = os.path.abspath("static/logo/client.jpg")
+    if not os.path.exists(logo_client):
+        logger.warning(f'client logo not exist, set gumpy : {logo_client}')
+        logo_client = os.path.abspath("static/logo/gumpy_transparent.png")
+
+    else:
+        logger.success(f'Custom logo client found {logo_client}')
+
+try:
+    logger.info('Checking all dirs')
+    if not os.path.exists(WALL_FOLDER):
+        os.makedirs(WALL_FOLDER)
+
+    if not os.path.exists(UPLOAD_FOLDER):
+        os.makedirs(UPLOAD_FOLDER)
+
+    if not os.path.exists(LOGO_FOLDER):
+        os.makedirs(LOGO_FOLDER)
+
+    if not os.path.exists(EVENT_FOLDER):
+        logger.critical(f'Event folder not exist, exit program : {EVENT_FOLDER}')
+        exit(1)
+    logger.success('All dirs are presents')
+
+except Exception as e:
+    logger.error(e)
+
+logger.info(f'Event folder: {EVENT_FOLDER}')
+
 
 
 @app.route('/')
 @app.route('/index')
 def show_index():
-    make_picture(client_folder)
+    make_picture(EVENT_FOLDER)
     list_image_photowall = glob.glob1(WALL_FOLDER, '*.jpg')
-    logger.debug(list_image_photowall)
-    logger.debug(logo_client)
+    logger.info(f'Found {len(list_image_photowall)} pictures in photowall, builoding')
+
     return render_template("index.html", images=list_image_photowall, logo_client=logo_client)
 
 
@@ -110,12 +130,15 @@ def show_admin():
     return render_template("admin.html", images=listw)
 
 
-def allowed_file(filename):
-    return '.' in filename and \
-           filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+@app.route('/config/<name>', methods=['GET'])
+def set_event_name(name):
+    _clear_history()
+    Path(dslr_path / Path(name) / "Originals")
+    make_picture( Path(dslr_path / Path(name) / "Originals"))
+    return jsonify({"message": "event configured"})
 
 
-@app.route('/upload', methods=['GET', 'POST'])
+@app.route('/upload', methods=[ 'POST'])
 def upload_file():
     if request.method == 'POST':
         # check if the post request has the file part
@@ -128,12 +151,12 @@ def upload_file():
         if file.filename == '':
             flash('No selected file')
             return redirect(request.url)
-        if file and allowed_file(file.filename):
+        if file and _allowed_file(file.filename):
             filename = secure_filename(file.filename)
             file.save(os.path.join(UPLOAD_FOLDER, filename))
             # return redirect(url_for('upload_file', filename=filename))
             logger.info(f'file {filename} correctly upload to {UPLOAD_FOLDER}')
-            resize_picture(FROM_FOLDER=UPLOAD_FOLDER, img=filename)
+            _resize_picture(UPLOAD_FOLDER, filename)
             return redirect("/")
 
     return render_template("upload.html")
@@ -148,7 +171,7 @@ def delete_pic(img):
     except Exception as e:
         logger.debug(e)
     try:
-        os.unlink(os.path.join(client_folder, img))
+        os.unlink(os.path.join(EVENT_FOLDER, img))
     except Exception as e:
         logger.debug(e)
 
@@ -165,8 +188,11 @@ def add_header(response):
     """
     response.headers['X-UA-Compatible'] = 'IE=Edge,chrome=1'
     response.headers['Cache-Control'] = 'public, max-age=0'
+
     return response
 
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8080, debug=True)
+    Compress(app)
+

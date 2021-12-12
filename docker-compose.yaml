@@ -3,14 +3,15 @@ version: "3.7"
 services:
 
   gigawall:
-    context: .
-      build: Dockerfile
-    image: "fizzbuzz2/python:gigawall"
-    container_name: "gigawall"
-    hostname: "gigawall"
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    image: "fizzbuzz2/photowall:gigawall"
+    container_name: "photowall"
+    hostname: "photowall"
     restart: always
     ports:
-      - 8081:8080
+      - 443:8080
     labels:
       - traefik.enable=true
       - traefik.http.routers.gigawall.rule=Host(`gigawall.dc-consulting.pro`)
