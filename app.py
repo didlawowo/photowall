@@ -44,7 +44,7 @@ def _resize_picture(original_folder, img):
     logger.info('Starting resize all image')
     try:
         image = Image.open(os.path.join(original_folder, img))
-        size = (2000, 1000)
+        size = (1500, 800)
         image.thumbnail(size, Image.ANTIALIAS)
         image.save(os.path.join(WALL_FOLDER, img, ), quality=90, optimize=True)
         logger.success(f'Image {img} saved')
