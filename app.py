@@ -10,11 +10,11 @@ from werkzeug.utils import secure_filename
 
 
 def _clear_history():
-    logger.info('Drop old image in photowall')
+    logger.info('Drop old images in photowall')
     files = glob.glob1(WALL_FOLDER, '*.jpg')
     logger.debug(files)
     for f in files:
-        logger.debug(f)
+        # logger.debug(f)
         os.unlink(os.path.join(WALL_FOLDER, f ))
     logger.success('Photo Wall dir cleared')
 
@@ -24,7 +24,7 @@ def _diff(first, second):
     return [item for item in first if item not in second]
 
 
-def make_picture(client_folder):
+def _make_picture(client_folder):
     listf = glob.glob1(client_folder, "*.jpg")
     listw = glob.glob1(WALL_FOLDER, '*.jpg')
 
@@ -117,7 +117,7 @@ logger.info(f'Event folder: {EVENT_FOLDER}')
 @app.route('/')
 @app.route('/index')
 def show_index():
-    make_picture(EVENT_FOLDER)
+    _make_picture(EVENT_FOLDER)
     list_image_photowall = glob.glob1(WALL_FOLDER, '*.jpg')
     logger.info(f'Found {len(list_image_photowall)} pictures in photowall, builoding')
 
@@ -134,7 +134,7 @@ def show_admin():
 def set_event_name(name):
     _clear_history()
     Path(dslr_path / Path(name) / "Originals")
-    make_picture( Path(dslr_path / Path(name) / "Originals"))
+    _make_picture( Path(dslr_path / Path(name) / "Originals"))
     return jsonify({"message": "event configured"})
 
 
@@ -169,11 +169,12 @@ def delete_pic(img):
     try:
         os.unlink(os.path.join(UPLOAD_FOLDER, img))
     except Exception as e:
-        logger.debug(e)
+        logger.error(e)
+
     try:
         os.unlink(os.path.join(EVENT_FOLDER, img))
     except Exception as e:
-        logger.debug(e)
+        logger.error(e)
 
     os.unlink(os.path.join(WALL_FOLDER, img))
     logger.info(f'Picture {img} deleted ')
@@ -193,6 +194,12 @@ def add_header(response):
 
 
 if __name__ == '__main__':
+    from dotenv import load_dotenv
+
+    load_dotenv()
     app.run(host='0.0.0.0', port=8080, debug=True)
-    Compress(app)
+    c= Compress()
+    c.init_app(app)
+
+
 
