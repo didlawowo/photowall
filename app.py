@@ -15,7 +15,7 @@ def _clear_history():
     logger.debug(files)
     for f in files:
         # logger.debug(f)
-        os.unlink(os.path.join(WALL_FOLDER, f ))
+        os.unlink(os.path.join(WALL_FOLDER, f))
     logger.success('Photo Wall dir cleared')
 
 
@@ -40,7 +40,6 @@ def _make_picture(client_folder):
 
 
 def _resize_picture(original_folder, img):
-
     logger.info('Starting resize all image')
     try:
         image = Image.open(os.path.join(original_folder, img))
@@ -57,22 +56,21 @@ def _allowed_file(filename):
            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 
+### RUN CODE
+
 static = 'static'
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'JPG', 'jpeg', 'gif'}
 
 app = Flask(__name__, static_folder=static, template_folder='templates')
 
-
 logger.info(f"{os.environ.get('FLASK_ENV')} mode detected")
 event_name = Path(os.environ.get('EVENT'))
 dslr_path = Path(os.environ.get('DSLR_PATH'))
-
 
 WALL_FOLDER = os.path.abspath('static/photowall')
 UPLOAD_FOLDER = os.path.abspath('static/upload')
 LOGO_FOLDER = os.path.abspath('static/logo_client')
 EVENT_FOLDER = Path(dslr_path / event_name / "Singles")
-
 
 _clear_history()
 
@@ -127,13 +125,12 @@ def show_admin():
 
 @app.route('/config/<name>', methods=['GET'])
 def set_event_name(name):
-
     Path(dslr_path / Path(name) / "Singles")
     _make_picture(Path(dslr_path / Path(name) / "Singles"))
     return jsonify({"message": "event configured"})
 
 
-@app.route('/upload', methods=[ 'POST'])
+@app.route('/upload', methods=['POST'])
 def upload_file():
     if request.method == 'POST':
         # check if the post request has the file part
@@ -194,8 +191,5 @@ if __name__ == '__main__':
     load_dotenv()
     _clear_history()
     app.run(host='0.0.0.0', port=8080, debug=True)
-    c= Compress()
+    c = Compress()
     c.init_app(app)
-
-
-
