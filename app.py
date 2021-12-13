@@ -4,7 +4,7 @@ from pathlib import Path
 from flask_compress import Compress
 
 from PIL import Image
-from flask import Flask, flash, request, redirect, render_template, config, jsonify
+from flask import Flask, flash, request, redirect, render_template,  jsonify
 from loguru import logger
 from werkzeug.utils import secure_filename
 
@@ -190,6 +190,6 @@ if __name__ == '__main__':
 
     load_dotenv()
     _clear_history()
-    app.run(host='0.0.0.0', port=8080, debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=True)
     c = Compress()
     c.init_app(app)

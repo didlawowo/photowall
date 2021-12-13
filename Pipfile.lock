@@ -81,8 +81,7 @@
                 "sha256:5941b2b48a20143d2267e95b1c2a7603ce057ee39fd88e7329b0c292aa16869b",
                 "sha256:9f47eda37229f68eee03b24b9748937c7dc3868f906e8ba69fbcbdd3bc5dc3e2"
             ],
-            "markers": "sys_platform == 'win32'",
-            "version": "==0.4.4"
+             "version": "==0.4.4"
         },
         "flask": {
             "hashes": [
@@ -276,14 +275,6 @@
             ],
             "index": "pypi",
             "version": "==2.0.2"
-        },
-        "win32-setctime": {
-            "hashes": [
-                "sha256:2b72b798fdc1d909fb3cc0d25e0be52a42f4848857e3588dd3947c6a18b42609",
-                "sha256:7964234073ad9bc7a689ef2ebe6ce931976b644fe73fd50cf7729c996b7d8385"
-            ],
-            "markers": "sys_platform == 'win32'",
-            "version": "==1.0.4"
         }
     },
     "develop": {}
