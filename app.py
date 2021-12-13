@@ -62,20 +62,16 @@ ALLOWED_EXTENSIONS = {'png', 'jpg', 'JPG', 'jpeg', 'gif'}
 
 app = Flask(__name__, static_folder=static, template_folder='templates')
 
-if os.getenv('FLASK_ENV') == 'development':
-    logger.debug('development mode detected')
-    event_name = Path("example")
-    dslr_path = Path(".")
-else:
-    logger.debug('production mode detected')
-    event_name = Path(os.environ.get('EVENT'))
-    dslr_path = Path(os.environ.get('DSLR_PATH'))
+
+logger.info(f"{os.environ.get('FLASK_ENV')} mode detected")
+event_name = Path(os.environ.get('EVENT'))
+dslr_path = Path(os.environ.get('DSLR_PATH'))
 
 
 WALL_FOLDER = os.path.abspath('static/photowall')
 UPLOAD_FOLDER = os.path.abspath('static/upload')
 LOGO_FOLDER = os.path.abspath('static/logo_client')
-EVENT_FOLDER = Path(dslr_path / event_name / "Originals")
+EVENT_FOLDER = Path(dslr_path / event_name / "Singles")
 
 
 _clear_history()
@@ -85,7 +81,7 @@ if os.getenv('FLASK_ENV') == 'development':
 else:
     logo_client = os.path.abspath("static/logo/client.jpg")
     if not os.path.exists(logo_client):
-        logger.warning(f'client logo not exist, set gumpy : {logo_client}')
+        logger.warning(f'client logo not exist, set gumpy jpg')
         logo_client = os.path.abspath("static/logo/gumpy_transparent.png")
 
     else:
@@ -113,7 +109,6 @@ except Exception as e:
 logger.info(f'Event folder: {EVENT_FOLDER}')
 
 
-
 @app.route('/')
 @app.route('/index')
 def show_index():
@@ -132,9 +127,9 @@ def show_admin():
 
 @app.route('/config/<name>', methods=['GET'])
 def set_event_name(name):
-    _clear_history()
-    Path(dslr_path / Path(name) / "Originals")
-    _make_picture( Path(dslr_path / Path(name) / "Originals"))
+
+    Path(dslr_path / Path(name) / "Singles")
+    _make_picture(Path(dslr_path / Path(name) / "Singles"))
     return jsonify({"message": "event configured"})
 
 
@@ -197,6 +192,7 @@ if __name__ == '__main__':
     from dotenv import load_dotenv
 
     load_dotenv()
+    _clear_history()
     app.run(host='0.0.0.0', port=8080, debug=True)
     c= Compress()
     c.init_app(app)

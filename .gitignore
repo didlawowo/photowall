@@ -13,3 +13,4 @@ static/logo_client/*
 
 .DS_Store
 conf.py
+.env
