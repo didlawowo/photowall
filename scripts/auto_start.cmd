@@ -1,5 +1,5 @@
 @echo off
 
 cd C:\Users\gumpy\Documents\GitHub\photowall\
-pipenv run flask run
+python -m pipenv run flask run
 pause
