@@ -17,7 +17,7 @@ services:
       - traefik.http.routers.photowall.rule=Host(`photowall.gumpy.fr`)
       - traefik.http.routers.photowall.entrypoints=websecure
       - traefik.http.routers.photowall.tls.certresolver=myresolver
-      - traefik.http.routers.photowall.service=gigawall
+      - traefik.http.routers.photowall.service=photowall
       - traefik.http.services.photowall.loadbalancer.server.port=5000
 
 networks:

@@ -38,4 +38,4 @@ COPY . .
 RUN PIPENV_VENV_IN_PROJECT=1 pipenv install
 
 EXPOSE 5000
-CMD ["python", "app.py"]
+CMD ["pipenv", "run","python", "app.py"]

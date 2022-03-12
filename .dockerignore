@@ -1,5 +1,6 @@
 .venv
 .gitignore
+.git
 *.md
 setup.*
 venv
@@ -8,4 +9,5 @@ Dockerfile
 archive
 scripts
 .idea
-
+Makefile
+.env.example
