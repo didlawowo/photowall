@@ -12,15 +12,21 @@ help:
 
 .check:
 ifeq (, $(shell docker --version))
-	$(error "You must have terraform present on your desktop")
+	$(error "You must have docker present on your desktop")
 endif
 
-start_app: ## start carousel
+start-dev: ## start carousel
 	@python app.py
+
+start-docker: ## start docker-compose
+	docker-compose up -d 
+
+stop-docker: ## stop docker-compose
+	docker-compose stop
+
+run-docker: ## run container
+	 docker run -ti fizzbuzz2/photowall:1.1.0 bash
 
 build-image:  ## build dev image
 	@echo "Build prod image"
-	@docker buildx build  --platform linux/amd64 --push -t fizzbuzz2/photowall:1.0.0 .
-
-push-tag: ## tag local en push
-	@docker push fizzbuzz2/photowall:1.0.0
+	@docker buildx build  --platform linux/amd64 --push -t fizzbuzz2/photowall:1.1.0 .

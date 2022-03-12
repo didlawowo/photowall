@@ -6,7 +6,7 @@ ENV LC_ALL C.UTF-8
 ENV PYTHONDONTWRITEBYTECODE 1
 
 RUN set -xe; \
-    apk add --update --no-cache  tzdata gcc build-base \
+    apk add --update --no-cache  tzdata gcc build-base bash\
      # Pillow dependencies
     freetype-dev \
     fribidi-dev \
@@ -36,7 +36,6 @@ WORKDIR /photowall
 COPY . .
 
 RUN PIPENV_VENV_IN_PROJECT=1 pipenv install
-
 
 EXPOSE 5000
 CMD ["python", "app.py"]

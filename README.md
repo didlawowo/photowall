@@ -1,22 +1,22 @@
 # Photowall gumpy
 
-### mode dev
+## mode dev
+
 export FLASK_ENV=development
-    
+
 flask run
 
+## install
 
-# install
 pip install -r requirements.txt
 
-# config
+## config
+
 modify app_conf.py
 
+## mode prod
 
-# mode prod
 run auto_start.cmd
-
-
 
 ## Nouvelle évènement
 

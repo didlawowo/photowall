@@ -1,4 +1,4 @@
-version: "3.7"
+version: "3"
 
 services:
 
@@ -6,7 +6,7 @@ services:
     build:
       context: ./
       dockerfile: Dockerfile
-    image: "fizzbuzz2/photowall:1.0.0"
+    image: "fizzbuzz2/photowall:1.1.0"
     container_name: "photowall"
     hostname: "photowall"
     restart: always
@@ -14,7 +14,7 @@ services:
       - 5000:5000
     labels:
       - traefik.enable=true
-      - traefik.http.routers.photowall.rule=Host(`photowall.dc-consulting.pro`)
+      - traefik.http.routers.photowall.rule=Host(`photowall.gumpy.fr`)
       - traefik.http.routers.photowall.entrypoints=websecure
       - traefik.http.routers.photowall.tls.certresolver=myresolver
       - traefik.http.routers.photowall.service=gigawall
@@ -23,5 +23,5 @@ services:
 networks:
   default:
     external:
-      name: gateway
+      name: dc-network
 

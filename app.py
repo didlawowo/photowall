@@ -4,9 +4,13 @@ from pathlib import Path
 from flask_compress import Compress
 
 from PIL import Image
-from flask import Flask, flash, request, redirect, render_template,  jsonify
+from flask import Flask, flash, request, redirect, render_template, jsonify
 from loguru import logger
 from werkzeug.utils import secure_filename
+
+from dotenv import load_dotenv
+
+load_dotenv()
 
 
 def _clear_history():
