@@ -8,11 +8,14 @@ flask run
 
 ## install
 
-pip install -r requirements.txt
+```python
+pip install pipenv
+python3 -m pipenv install
+```
 
 ## config
 
-modify app_conf.py
+copy .env.example to .env and change parameters
 
 ## mode prod
 
@@ -25,6 +28,6 @@ run auto_start.cmd
 - 3 - modifier le fichier app_conf.py pour changer la valeur d'event_name pour mettre le nom de l'évènement client dans dslrbooth
 - 4 - ouvrir le terminal et faire " cd C:\Users\gumpy\Documents\GitHub\photowall"
 - 4 - lancer auto_start.cmd
-- 5 - aller sur localhost:8080 pour voir si tout fonctionne bien
+- 5 - aller sur localhost:5000 pour voir si tout fonctionne bien
 - 6 - tester sur la tablette avec l'IP wifi de la box  
 - 7 - tester l'upload
