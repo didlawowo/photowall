@@ -1,0 +1,3 @@
+
+let canvas = document.createElement("canvas")document.body.appendChild(canvas)canvas.width = window.innerWidth-300canvas.height = window.innerHeight-20let ctx = canvas.getContext("2d")const max_ratio = 100const min_ratio = 20ctx.strokeRect(0, 0, canvas.width, canvas.height)setInterval(()=>{fetch("/api/image/random").then(d=>{if(d.status != 200) {throw d}return d.blob()}).then(blob=>{createImageBitmap(blob).then(img=>{let ratio = (Math.random() * (max_ratio - min_ratio + 1) + min_ratio) / 100let dx = ratio * img.widthlet dy = ratio * img.heightlet x = Math.random() * canvas.widthlet y = Math.random() * canvas.heightlet degrees = Math.random()*360ctx.save()ctx.translate(x, y)ctx.rotate(degrees*Math.PI/180)ctx.drawImage(img, 0, 0, dx, dy)ctx.restore()})})}, 1000)
+
