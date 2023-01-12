@@ -31,3 +31,20 @@ run auto_start.cmd
 - 5 - aller sur localhost:5000 pour voir si tout fonctionne bien
 - 6 - tester sur la tablette avec l'IP wifi de la box  
 - 7 - tester l'upload
+
+## to dev
+
+pipenv install
+pipenv shell
+
+python app.py
+
+## change logo client
+
+go to index.html
+and change
+
+```html
+
+            <h1><img class="logo" src="static/logo/gumpy_transparent.png" alt="logo"></h1>
+```
