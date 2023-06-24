@@ -1,0 +1,13 @@
+.venv
+.gitignore
+.git
+*.md
+setup.*
+venv
+docker-compose.yaml
+Dockerfile
+archive
+scripts
+.idea
+Makefile
+.env.example

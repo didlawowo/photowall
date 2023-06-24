@@ -1,0 +1,61 @@
+<!doctype html>
+<title>Ajouter une nouvelle photo</title>
+
+
+<html>
+<head>
+    <!--<meta http-equiv="refresh" content="120" >-->
+    <link rel="shortcut icon" href="{{ url_for('static', filename='logo/favicon.ico') }}">
+    <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+          integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <title>Gumpy Photowall</title>
+</head>
+<style>
+
+
+
+body {
+font-family: 'Alegreya Sans' ;
+}
+
+.container {
+width: 500px
+}
+
+
+h3 {
+    font-size: 20px;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.logo {
+margin-top:20px;
+  width: 200px;
+  left: 30%;
+ display: inline;
+ position: relative;
+}
+
+
+
+
+</style>
+<body>
+
+<div class="container"><img class="logo" src="static/logo/GUMPY_gris.jpg"/>
+    <h3>Ajouter une nouvelle photo</h3>
+    <form method=post enctype=multipart/form-data>
+        <div class="form-row">
+            <div class="col">
+                <input class="btn btn-primary form-control" type=file name=file >
+                <hr>
+                <input class="btn btn-info form-control" type=submit value=Envoyer>
+            </div>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>

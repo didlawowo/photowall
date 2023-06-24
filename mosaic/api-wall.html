@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Live Mosaic</title>
+        <script>
+            window.onload = function() {
+                setInterval(refreshImage, 1000); // Refresh every second
+            }
+
+            function refreshImage() {
+                var img = document.getElementById("mosaic");
+                var d = new Date();
+                img.src = "http://localhost:5000/mosaic?time=" + d.getTime();  // Add time to avoid caching
+            }
+        </script>
+    </head>
+    <body>
+        <img id="mosaic" src="http://localhost:5000/mosaic">
+    </body>
+</html>
