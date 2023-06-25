@@ -8,11 +8,12 @@ input_folder_path = '../example-photos'  # change this to your image directory
 output_folder_path = './watermarked'  # change this to your output directory
 
 # Watermark text
-watermark_text = "venez prendre une photo"
+watermark_text = "Capturez des moments inoubliables !"
 
-# You can specify a .ttf font file path on your system here
-# Font size is the second parameter
+# Font size for the watermark text
+font_size = 40
 font = ImageFont.load_default()
+
 
 # Initialize Pygame
 pygame.init()
@@ -31,11 +32,20 @@ for filename in os.listdir(input_folder_path):
         img = Image.open(os.path.join(input_folder_path, filename))
         draw = ImageDraw.Draw(img)
 
-        # Position the text at bottom-right, you can customize as you need
-        text_position = (img.width - 500, img.height - 100)
+        # Create a watermark band
+        watermark_band = Image.new('RGBA', (img.width, 100), (0, 0, 0, 128))
 
-        # Add text to image
-        draw.text(text_position, watermark_text, font=font, fill="white")
+        # Position the watermark text in the center of the band
+        watermark_font = ImageFont.truetype('arial.ttf', font_size)
+        text_width, text_height = draw.textsize(watermark_text, font=watermark_font)
+        text_position = ((img.width - text_width) // 2, (100 - text_height) // 2)
+
+        # Add the watermark text to the band
+        watermark_draw = ImageDraw.Draw(watermark_band)
+        watermark_draw.text(text_position, watermark_text, font=watermark_font, fill='white')
+
+        # Paste the watermark band on top of the image
+        img.paste(watermark_band, (0, img.height - 100), mask=watermark_band)
 
         # Save watermarked images to a new folder
         os.makedirs(output_folder_path, exist_ok=True)
