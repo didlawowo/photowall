@@ -3,7 +3,7 @@ import pygame
 import time
 from PIL import Image, ImageDraw, ImageFont
 
-# Folders with pictures and for output
+# Folders with pictures
 input_folder_path = '../example-photos'  # change this to your image directory
 output_folder_path = './watermarked'  # change this to your output directory
 
@@ -12,8 +12,12 @@ watermark_text = "Capturez des moments inoubliables !"
 
 # Font size for the watermark text
 font_size = 40
-font = ImageFont.load_default()
 
+# Font file path for macOS
+font_file_path = '/Library/Fonts/Arial.ttf'  # replace with the actual font file path on macOS
+
+# Path to the image for the watermark
+watermark_image_path = './gumpy_logo.png'  # change this to the path of your image
 
 # Initialize Pygame
 pygame.init()
@@ -23,37 +27,79 @@ size = (pygame.display.Info().current_w, pygame.display.Info().current_h)
 screen = pygame.display.set_mode(size, pygame.FULLSCREEN)
 
 # Time per slide in seconds
-slide_time = 5
+slide_time = 2
+
+# Flag to track screen touch
+screen_touched = False
+
+# List of pictures
+picture_list = [filename for filename in os.listdir(input_folder_path) if filename.endswith('.jpg') or filename.endswith('.png')]
+picture_count = len(picture_list)
+current_index = 0
+
+# Clear the contents of the watermarked folder
+for filename in os.listdir(output_folder_path):
+    file_path = os.path.join(output_folder_path, filename)
+    os.remove(file_path)
 
 # Main loop
-for filename in os.listdir(input_folder_path):
-    if filename.endswith('.jpg') or filename.endswith('.png'):  # add or remove file types as needed
-        # Open the image using PIL
-        img = Image.open(os.path.join(input_folder_path, filename))
-        draw = ImageDraw.Draw(img)
+while not screen_touched:
+    # Get the current picture filename
+    filename = picture_list[current_index]
 
-        # Create a watermark band
-        watermark_band = Image.new('RGBA', (img.width, 100), (0, 0, 0, 128))
+    # Open the image using PIL
+    img = Image.open(os.path.join(input_folder_path, filename))
+    img_height = 100  # Adjust the height to 100 pixels
 
-        # Position the watermark text in the center of the band
-        watermark_font = ImageFont.truetype('arial.ttf', font_size)
-        text_width, text_height = draw.textsize(watermark_text, font=watermark_font)
-        text_position = ((img.width - text_width) // 2, (100 - text_height) // 2)
+    # Resize the image while maintaining aspect ratio
+    width, height = img.size
+    img_width = int(width * (img_height / height))
+    img = img.resize((img_width, img_height))
 
-        # Add the watermark text to the band
-        watermark_draw = ImageDraw.Draw(watermark_band)
-        watermark_draw.text(text_position, watermark_text, font=watermark_font, fill='white')
+    # Create a watermark band
+    watermark_band = Image.new('RGBA', (img_width, img_height), (0, 0, 0, 128))
 
-        # Paste the watermark band on top of the image
-        img.paste(watermark_band, (0, img.height - 100), mask=watermark_band)
+    # Load the watermark image
+    watermark_image = Image.open(watermark_image_path)
 
-        # Save watermarked images to a new folder
-        os.makedirs(output_folder_path, exist_ok=True)
-        img.save(os.path.join(output_folder_path, filename))
+    # Position the watermark image at the beginning of the band
+    watermark_band.paste(watermark_image, (0, 0))
 
-        # Convert PIL Image to Pygame Surface and display it
-        pygame_img = pygame.image.load(os.path.join(output_folder_path, filename))
-        pygame_img = pygame.transform.scale(pygame_img, (pygame.display.Info().current_w, pygame.display.Info().current_h))
-        screen.blit(pygame_img, (0,0))
-        pygame.display.flip()
-        time.sleep(slide_time)
+    # Position the watermark text after the image
+    watermark_font = ImageFont.truetype(font_file_path, font_size)
+    draw = ImageDraw.Draw(watermark_band)
+    text_bbox = draw.textbbox((0, 0), watermark_text, font=watermark_font)
+    text_width = text_bbox[2] - text_bbox[0]
+    text_height = text_bbox[3] - text_bbox[1]
+    text_position = (watermark_image.width, (img_height - text_height) // 2)
+
+    # Add the watermark text to the band
+    draw.text(text_position, watermark_text, font=watermark_font, fill='white')
+
+    # Paste the watermark band on top of the image
+    img.paste(watermark_band, (0, 0), mask=watermark_band)
+
+    # Save watermarked images to the output directory
+    output_path = os.path.join(output_folder_path, filename)
+    img.save(output_path)
+
+    # Convert PIL Image to Pygame Surface and display it
+    pygame_img = pygame.image.frombuffer(img.tobytes(), img.size, img.mode)
+    pygame_img = pygame.transform.scale(pygame_img, (pygame.display.Info().current_w, pygame.display.Info().current_h))
+    screen.blit(pygame_img, (0, 0))
+    pygame.display.flip()
+
+    # Start timer
+    start_time = time.time()
+
+    # Slideshow loop
+    while time.time() - start_time < slide_time:
+        for event in pygame.event.get():
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                screen_touched = True
+                break
+
+    # Increment the index for the next picture
+    current_index = (current_index + 1) % picture_count
+
+pygame.quit
