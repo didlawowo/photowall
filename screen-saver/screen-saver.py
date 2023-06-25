@@ -26,7 +26,7 @@ size = (pygame.display.Info().current_w, pygame.display.Info().current_h)
 screen = pygame.display.set_mode(size, pygame.FULLSCREEN)
 
 # Time per slide in seconds
-slide_time = 2
+slide_time = 3
 
 # Flag to track mouse movement
 mouse_moved = False
@@ -67,8 +67,8 @@ while not mouse_moved:
 
     # Position the watermark text above the image
     watermark_font = ImageFont.truetype(font_file_path, font_size)
-    text_width, text_height = draw.textsize(watermark_text, font=watermark_font)
-    text_position = (img.width - text_width, img.height - 150)
+    text_bbox = draw.textbbox((0, 0), watermark_text, font=watermark_font)
+    text_position = (img.width - text_bbox[2], img.height - 150)
 
     # Add the watermark text to the image
     draw.text(text_position, watermark_text, font=watermark_font, fill='white')
