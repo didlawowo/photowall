@@ -1,0 +1,453 @@
+2023-06-25 16:53:15.978 | DEBUG    | __main__:<module>:42 - Removed file: ./watermarked/mariage-443.jpg
+2023-06-25 16:53:15.979 | DEBUG    | __main__:<module>:42 - Removed file: ./watermarked/DSC01977.jpg
+2023-06-25 16:53:15.979 | DEBUG    | __main__:<module>:42 - Removed file: ./watermarked/DSC07865.jpg
+2023-06-25 16:53:15.979 | DEBUG    | __main__:<module>:42 - Removed file: ./watermarked/DSC07870.jpg
+2023-06-25 16:53:15.980 | DEBUG    | __main__:<module>:42 - Removed file: ./watermarked/DSC02248.jpg
+2023-06-25 16:53:15.980 | DEBUG    | __main__:<module>:42 - Removed file: ./watermarked/mariage-390.jpg
+2023-06-25 16:53:15.980 | DEBUG    | __main__:<module>:42 - Removed file: ./watermarked/DSC02212.jpg
+2023-06-25 16:53:15.980 | DEBUG    | __main__:<module>:42 - Removed file: ./watermarked/DSC06477.jpg
+2023-06-25 16:53:15.980 | DEBUG    | __main__:<module>:42 - Removed file: ./watermarked/DSC02228.jpg
+2023-06-25 16:53:15.981 | DEBUG    | __main__:<module>:42 - Removed file: ./watermarked/DSC07837.jpg
+2023-06-25 16:53:15.981 | DEBUG    | __main__:<module>:42 - Removed file: ./watermarked/mariage-376.jpg
+2023-06-25 16:53:15.981 | DEBUG    | __main__:<module>:42 - Removed file: ./watermarked/DSC06482.jpg
+2023-06-25 16:53:15.981 | DEBUG    | __main__:<module>:42 - Removed file: ./watermarked/DSC02245.jpg
+2023-06-25 16:53:15.981 | DEBUG    | __main__:<module>:42 - Removed file: ./watermarked/DSC07856.jpg
+2023-06-25 16:53:15.982 | DEBUG    | __main__:<module>:42 - Removed file: ./watermarked/DSC07842.jpg
+2023-06-25 16:53:15.982 | DEBUG    | __main__:<module>:42 - Removed file: ./watermarked/DSC02118.jpg
+2023-06-25 16:53:15.982 | DEBUG    | __main__:<module>:42 - Removed file: ./watermarked/DSC06155.jpg
+2023-06-25 16:53:15.982 | DEBUG    | __main__:<module>:42 - Removed file: ./watermarked/DSC07840.jpg
+2023-06-25 16:53:15.982 | DEBUG    | __main__:<module>:42 - Removed file: ./watermarked/DSC02121.jpg
+2023-06-25 16:53:15.982 | DEBUG    | __main__:<module>:42 - Removed file: ./watermarked/DSC07924.jpg
+2023-06-25 16:53:15.985 | DEBUG    | __main__:<module>:42 - Removed file: ./watermarked/DSC07886.jpg
+2023-06-25 16:53:15.986 | DEBUG    | __main__:<module>:42 - Removed file: ./watermarked/DSC07853.jpg
+2023-06-25 16:53:15.986 | DEBUG    | __main__:<module>:46 - Picture list: ['mariage-443.jpg', 'DSC01977.jpg', 'DSC07865.jpg', 'DSC07870.jpg', 'DSC02248.jpg', 'mariage-390.jpg', 'DSC02212.jpg', 'DSC06477.jpg', 'DSC02228.jpg', 'DSC07837.jpg', 'mariage-376.jpg', 'DSC06482.jpg', 'DSC02245.jpg', 'DSC07856.jpg', 'DSC07842.jpg', 'DSC02118.jpg', 'DSC06155.jpg', 'DSC07840.jpg', 'DSC02121.jpg', 'DSC07924.jpg', 'DSC07886.jpg', 'DSC07853.jpg']
+2023-06-25 16:53:16.147 | DEBUG    | __main__:<module>:59 - Watermark size: 5999x2844
+2023-06-25 16:53:16.300 | DEBUG    | __main__:<module>:66 - Watermark position: (1, 1156)
+2023-06-25 16:53:16.322 | DEBUG    | __main__:<module>:75 - Text position: (5347, 1111)
+2023-06-25 16:53:16.444 | DEBUG    | __main__:<module>:84 - Saved watermarked image: ./watermarked/mariage-443.jpg
+2023-06-25 16:53:16.460 | DEBUG    | __main__:<module>:59 - Watermark size: 1919x910
+2023-06-25 16:53:16.483 | DEBUG    | __main__:<module>:66 - Watermark position: (1, 370)
+2023-06-25 16:53:16.487 | DEBUG    | __main__:<module>:75 - Text position: (1267, 325)
+2023-06-25 16:53:16.503 | DEBUG    | __main__:<module>:84 - Saved watermarked image: ./watermarked/DSC01977.jpg
+2023-06-25 16:53:16.645 | DEBUG    | __main__:<module>:59 - Watermark size: 5806x2752
+2023-06-25 16:53:16.788 | DEBUG    | __main__:<module>:66 - Watermark position: (0, 1119)
+2023-06-25 16:53:16.807 | DEBUG    | __main__:<module>:75 - Text position: (5153, 1074)
+2023-06-25 16:53:16.922 | DEBUG    | __main__:<module>:84 - Saved watermarked image: ./watermarked/DSC07865.jpg
+2023-06-25 16:53:17.072 | DEBUG    | __main__:<module>:59 - Watermark size: 5778x2739
+2023-06-25 16:53:17.210 | DEBUG    | __main__:<module>:66 - Watermark position: (0, 1113)
+2023-06-25 16:53:17.228 | DEBUG    | __main__:<module>:75 - Text position: (5125, 1068)
+2023-06-25 16:53:17.345 | DEBUG    | __main__:<module>:84 - Saved watermarked image: ./watermarked/DSC07870.jpg
+2023-06-25 16:53:17.360 | DEBUG    | __main__:<module>:59 - Watermark size: 1919x910
+2023-06-25 16:53:17.382 | DEBUG    | __main__:<module>:66 - Watermark position: (1, 370)
+2023-06-25 16:53:17.386 | DEBUG    | __main__:<module>:75 - Text position: (1267, 325)
+2023-06-25 16:53:17.402 | DEBUG    | __main__:<module>:84 - Saved watermarked image: ./watermarked/DSC02248.jpg
+2023-06-25 16:53:17.549 | DEBUG    | __main__:<module>:59 - Watermark size: 5602x2655
+2023-06-25 16:53:17.678 | DEBUG    | __main__:<module>:66 - Watermark position: (0, 1080)
+2023-06-25 16:53:17.696 | DEBUG    | __main__:<module>:75 - Text position: (4949, 1035)
+2023-06-25 16:53:17.806 | DEBUG    | __main__:<module>:84 - Saved watermarked image: ./watermarked/mariage-390.jpg
+2023-06-25 16:53:17.820 | DEBUG    | __main__:<module>:59 - Watermark size: 1919x910
+2023-06-25 16:53:17.841 | DEBUG    | __main__:<module>:66 - Watermark position: (1, 370)
+2023-06-25 16:53:17.845 | DEBUG    | __main__:<module>:75 - Text position: (1267, 325)
+2023-06-25 16:53:17.861 | DEBUG    | __main__:<module>:84 - Saved watermarked image: ./watermarked/DSC02212.jpg
+2023-06-25 16:53:18.003 | DEBUG    | __main__:<module>:59 - Watermark size: 5656x2681
+2023-06-25 16:53:18.137 | DEBUG    | __main__:<module>:66 - Watermark position: (0, 1090)
+2023-06-25 16:53:18.154 | DEBUG    | __main__:<module>:75 - Text position: (5003, 1045)
+2023-06-25 16:53:18.270 | DEBUG    | __main__:<module>:84 - Saved watermarked image: ./watermarked/DSC06477.jpg
+2023-06-25 16:53:18.284 | DEBUG    | __main__:<module>:59 - Watermark size: 1919x910
+2023-06-25 16:53:18.305 | DEBUG    | __main__:<module>:66 - Watermark position: (1, 370)
+2023-06-25 16:53:18.309 | DEBUG    | __main__:<module>:75 - Text position: (1267, 325)
+2023-06-25 16:53:18.325 | DEBUG    | __main__:<module>:84 - Saved watermarked image: ./watermarked/DSC02228.jpg
+2023-06-25 16:53:18.459 | DEBUG    | __main__:<module>:59 - Watermark size: 5999x2844
+2023-06-25 16:53:18.605 | DEBUG    | __main__:<module>:66 - Watermark position: (1, 1156)
+2023-06-25 16:53:18.625 | DEBUG    | __main__:<module>:75 - Text position: (5347, 1111)
+2023-06-25 16:53:18.746 | DEBUG    | __main__:<module>:84 - Saved watermarked image: ./watermarked/DSC07837.jpg
+2023-06-25 16:53:18.910 | DEBUG    | __main__:<module>:59 - Watermark size: 5999x2844
+2023-06-25 16:53:19.059 | DEBUG    | __main__:<module>:66 - Watermark position: (1, 1156)
+2023-06-25 16:53:19.079 | DEBUG    | __main__:<module>:75 - Text position: (5347, 1111)
+2023-06-25 16:53:19.205 | DEBUG    | __main__:<module>:84 - Saved watermarked image: ./watermarked/mariage-376.jpg
+2023-06-25 16:53:19.224 | DEBUG    | __main__:<module>:59 - Watermark size: 1620x767
+2023-06-25 16:53:19.241 | DEBUG    | __main__:<module>:66 - Watermark position: (0, 313)
+2023-06-25 16:53:19.245 | DEBUG    | __main__:<module>:75 - Text position: (967, 268)
+2023-06-25 16:53:19.258 | DEBUG    | __main__:<module>:84 - Saved watermarked image: ./watermarked/DSC06482.jpg
+2023-06-25 16:53:19.271 | DEBUG    | __main__:<module>:59 - Watermark size: 1919x910
+2023-06-25 16:53:19.292 | DEBUG    | __main__:<module>:66 - Watermark position: (1, 370)
+2023-06-25 16:53:19.296 | DEBUG    | __main__:<module>:75 - Text position: (1267, 325)
+2023-06-25 16:53:19.312 | DEBUG    | __main__:<module>:84 - Saved watermarked image: ./watermarked/DSC02245.jpg
+2023-06-25 16:53:19.450 | DEBUG    | __main__:<module>:59 - Watermark size: 5710x2706
+2023-06-25 16:53:19.584 | DEBUG    | __main__:<module>:66 - Watermark position: (0, 1101)
+2023-06-25 16:53:19.602 | DEBUG    | __main__:<module>:75 - Text position: (5057, 1056)
+2023-06-25 16:53:19.714 | DEBUG    | __main__:<module>:84 - Saved watermarked image: ./watermarked/DSC07856.jpg
+2023-06-25 16:53:19.865 | DEBUG    | __main__:<module>:59 - Watermark size: 5892x2793
+2023-06-25 16:53:20.007 | DEBUG    | __main__:<module>:66 - Watermark position: (0, 1135)
+2023-06-25 16:53:20.026 | DEBUG    | __main__:<module>:75 - Text position: (5239, 1090)
+2023-06-25 16:53:20.145 | DEBUG    | __main__:<module>:84 - Saved watermarked image: ./watermarked/DSC07842.jpg
+2023-06-25 16:53:20.162 | DEBUG    | __main__:<module>:59 - Watermark size: 1919x910
+2023-06-25 16:53:20.183 | DEBUG    | __main__:<module>:66 - Watermark position: (1, 370)
+2023-06-25 16:53:20.187 | DEBUG    | __main__:<module>:75 - Text position: (1267, 325)
+2023-06-25 16:53:20.203 | DEBUG    | __main__:<module>:84 - Saved watermarked image: ./watermarked/DSC02118.jpg
+2023-06-25 16:53:20.218 | DEBUG    | __main__:<module>:59 - Watermark size: 1919x910
+2023-06-25 16:53:20.239 | DEBUG    | __main__:<module>:66 - Watermark position: (1, 370)
+2023-06-25 16:53:20.243 | DEBUG    | __main__:<module>:75 - Text position: (1267, 325)
+2023-06-25 16:53:20.259 | DEBUG    | __main__:<module>:84 - Saved watermarked image: ./watermarked/DSC06155.jpg
+2023-06-25 16:53:20.390 | DEBUG    | __main__:<module>:59 - Watermark size: 5849x2772
+2023-06-25 16:53:20.531 | DEBUG    | __main__:<module>:66 - Watermark position: (0, 1127)
+2023-06-25 16:53:20.549 | DEBUG    | __main__:<module>:75 - Text position: (5196, 1082)
+2023-06-25 16:53:20.666 | DEBUG    | __main__:<module>:84 - Saved watermarked image: ./watermarked/DSC07840.jpg
+2023-06-25 16:53:20.682 | DEBUG    | __main__:<module>:59 - Watermark size: 1919x909
+2023-06-25 16:53:20.704 | DEBUG    | __main__:<module>:66 - Watermark position: (0, 371)
+2023-06-25 16:53:20.707 | DEBUG    | __main__:<module>:75 - Text position: (1266, 326)
+2023-06-25 16:53:20.723 | DEBUG    | __main__:<module>:84 - Saved watermarked image: ./watermarked/DSC02121.jpg
+2023-06-25 16:53:20.861 | DEBUG    | __main__:<module>:59 - Watermark size: 5999x2844
+2023-06-25 16:53:21.009 | DEBUG    | __main__:<module>:66 - Watermark position: (1, 1156)
+2023-06-25 16:53:21.028 | DEBUG    | __main__:<module>:75 - Text position: (5347, 1111)
+2023-06-25 16:53:21.148 | DEBUG    | __main__:<module>:84 - Saved watermarked image: ./watermarked/DSC07924.jpg
+2023-06-25 16:53:21.322 | DEBUG    | __main__:<module>:59 - Watermark size: 5857x2776
+2023-06-25 16:53:21.463 | DEBUG    | __main__:<module>:66 - Watermark position: (0, 1129)
+2023-06-25 16:53:21.481 | DEBUG    | __main__:<module>:75 - Text position: (5204, 1084)
+2023-06-25 16:53:21.602 | DEBUG    | __main__:<module>:84 - Saved watermarked image: ./watermarked/DSC07886.jpg
+2023-06-25 16:53:21.766 | DEBUG    | __main__:<module>:59 - Watermark size: 5620x2664
+2023-06-25 16:53:21.896 | DEBUG    | __main__:<module>:66 - Watermark position: (0, 1083)
+2023-06-25 16:53:21.914 | DEBUG    | __main__:<module>:75 - Text position: (4967, 1038)
+2023-06-25 16:53:22.028 | DEBUG    | __main__:<module>:84 - Saved watermarked image: ./watermarked/DSC07853.jpg
+2023-06-25 16:56:56.725 | DEBUG    | __main__:<module>:42 - Removed file: ./watermarked/mariage-443.jpg
+2023-06-25 16:56:56.725 | DEBUG    | __main__:<module>:42 - Removed file: ./watermarked/DSC01977.jpg
+2023-06-25 16:56:56.726 | DEBUG    | __main__:<module>:42 - Removed file: ./watermarked/DSC07865.jpg
+2023-06-25 16:56:56.726 | DEBUG    | __main__:<module>:42 - Removed file: ./watermarked/DSC07870.jpg
+2023-06-25 16:56:56.726 | DEBUG    | __main__:<module>:42 - Removed file: ./watermarked/DSC02248.jpg
+2023-06-25 16:56:56.726 | DEBUG    | __main__:<module>:42 - Removed file: ./watermarked/mariage-390.jpg
+2023-06-25 16:56:56.726 | DEBUG    | __main__:<module>:42 - Removed file: ./watermarked/DSC02212.jpg
+2023-06-25 16:56:56.729 | DEBUG    | __main__:<module>:42 - Removed file: ./watermarked/DSC06477.jpg
+2023-06-25 16:56:56.729 | DEBUG    | __main__:<module>:42 - Removed file: ./watermarked/DSC02228.jpg
+2023-06-25 16:56:56.729 | DEBUG    | __main__:<module>:42 - Removed file: ./watermarked/DSC07837.jpg
+2023-06-25 16:56:56.729 | DEBUG    | __main__:<module>:42 - Removed file: ./watermarked/mariage-376.jpg
+2023-06-25 16:56:56.729 | DEBUG    | __main__:<module>:42 - Removed file: ./watermarked/DSC06482.jpg
+2023-06-25 16:56:56.729 | DEBUG    | __main__:<module>:42 - Removed file: ./watermarked/DSC02245.jpg
+2023-06-25 16:56:56.731 | DEBUG    | __main__:<module>:42 - Removed file: ./watermarked/DSC07856.jpg
+2023-06-25 16:56:56.731 | DEBUG    | __main__:<module>:42 - Removed file: ./watermarked/DSC07842.jpg
+2023-06-25 16:56:56.731 | DEBUG    | __main__:<module>:42 - Removed file: ./watermarked/DSC02118.jpg
+2023-06-25 16:56:56.731 | DEBUG    | __main__:<module>:42 - Removed file: ./watermarked/DSC06155.jpg
+2023-06-25 16:56:56.731 | DEBUG    | __main__:<module>:42 - Removed file: ./watermarked/DSC07840.jpg
+2023-06-25 16:56:56.732 | DEBUG    | __main__:<module>:42 - Removed file: ./watermarked/DSC02121.jpg
+2023-06-25 16:56:56.732 | DEBUG    | __main__:<module>:42 - Removed file: ./watermarked/DSC07924.jpg
+2023-06-25 16:56:56.732 | DEBUG    | __main__:<module>:42 - Removed file: ./watermarked/DSC07886.jpg
+2023-06-25 16:56:56.734 | DEBUG    | __main__:<module>:42 - Removed file: ./watermarked/DSC07853.jpg
+2023-06-25 16:56:56.734 | DEBUG    | __main__:<module>:46 - Picture list: ['mariage-443.jpg', 'DSC01977.jpg', 'DSC07865.jpg', 'DSC07870.jpg', 'DSC02248.jpg', 'mariage-390.jpg', 'DSC02212.jpg', 'DSC06477.jpg', 'DSC02228.jpg', 'DSC07837.jpg', 'mariage-376.jpg', 'DSC06482.jpg', 'DSC02245.jpg', 'DSC07856.jpg', 'DSC07842.jpg', 'DSC02118.jpg', 'DSC06155.jpg', 'DSC07840.jpg', 'DSC02121.jpg', 'DSC07924.jpg', 'DSC07886.jpg', 'DSC07853.jpg']
+2023-06-25 16:56:56.892 | DEBUG    | __main__:<module>:59 - Watermark size: 5999x2844
+2023-06-25 16:56:57.044 | DEBUG    | __main__:<module>:66 - Watermark position: (1, 1156)
+2023-06-25 16:56:57.066 | DEBUG    | __main__:<module>:75 - Text position: (5347, 1111)
+2023-06-25 16:56:57.188 | DEBUG    | __main__:<module>:84 - Saved watermarked image: ./watermarked/mariage-443.jpg
+2023-06-25 16:56:57.204 | DEBUG    | __main__:<module>:59 - Watermark size: 1919x910
+2023-06-25 16:56:57.226 | DEBUG    | __main__:<module>:66 - Watermark position: (1, 370)
+2023-06-25 16:56:57.230 | DEBUG    | __main__:<module>:75 - Text position: (1267, 325)
+2023-06-25 16:56:57.246 | DEBUG    | __main__:<module>:84 - Saved watermarked image: ./watermarked/DSC01977.jpg
+2023-06-25 16:56:57.389 | DEBUG    | __main__:<module>:59 - Watermark size: 5806x2752
+2023-06-25 16:56:57.528 | DEBUG    | __main__:<module>:66 - Watermark position: (0, 1119)
+2023-06-25 16:56:57.546 | DEBUG    | __main__:<module>:75 - Text position: (5153, 1074)
+2023-06-25 16:56:57.662 | DEBUG    | __main__:<module>:84 - Saved watermarked image: ./watermarked/DSC07865.jpg
+2023-06-25 16:56:57.811 | DEBUG    | __main__:<module>:59 - Watermark size: 5778x2739
+2023-06-25 16:56:57.950 | DEBUG    | __main__:<module>:66 - Watermark position: (0, 1113)
+2023-06-25 16:56:57.968 | DEBUG    | __main__:<module>:75 - Text position: (5125, 1068)
+2023-06-25 16:56:58.084 | DEBUG    | __main__:<module>:84 - Saved watermarked image: ./watermarked/DSC07870.jpg
+2023-06-25 16:56:58.099 | DEBUG    | __main__:<module>:59 - Watermark size: 1919x910
+2023-06-25 16:56:58.121 | DEBUG    | __main__:<module>:66 - Watermark position: (1, 370)
+2023-06-25 16:56:58.125 | DEBUG    | __main__:<module>:75 - Text position: (1267, 325)
+2023-06-25 16:56:58.141 | DEBUG    | __main__:<module>:84 - Saved watermarked image: ./watermarked/DSC02248.jpg
+2023-06-25 16:56:58.288 | DEBUG    | __main__:<module>:59 - Watermark size: 5602x2655
+2023-06-25 16:56:58.417 | DEBUG    | __main__:<module>:66 - Watermark position: (0, 1080)
+2023-06-25 16:56:58.435 | DEBUG    | __main__:<module>:75 - Text position: (4949, 1035)
+2023-06-25 16:56:58.545 | DEBUG    | __main__:<module>:84 - Saved watermarked image: ./watermarked/mariage-390.jpg
+2023-06-25 16:56:58.559 | DEBUG    | __main__:<module>:59 - Watermark size: 1919x910
+2023-06-25 16:56:58.581 | DEBUG    | __main__:<module>:66 - Watermark position: (1, 370)
+2023-06-25 16:56:58.585 | DEBUG    | __main__:<module>:75 - Text position: (1267, 325)
+2023-06-25 16:56:58.601 | DEBUG    | __main__:<module>:84 - Saved watermarked image: ./watermarked/DSC02212.jpg
+2023-06-25 16:56:58.745 | DEBUG    | __main__:<module>:59 - Watermark size: 5656x2681
+2023-06-25 16:56:58.878 | DEBUG    | __main__:<module>:66 - Watermark position: (0, 1090)
+2023-06-25 16:56:58.896 | DEBUG    | __main__:<module>:75 - Text position: (5003, 1045)
+2023-06-25 16:56:59.011 | DEBUG    | __main__:<module>:84 - Saved watermarked image: ./watermarked/DSC06477.jpg
+2023-06-25 16:56:59.025 | DEBUG    | __main__:<module>:59 - Watermark size: 1919x910
+2023-06-25 16:56:59.047 | DEBUG    | __main__:<module>:66 - Watermark position: (1, 370)
+2023-06-25 16:56:59.050 | DEBUG    | __main__:<module>:75 - Text position: (1267, 325)
+2023-06-25 16:56:59.066 | DEBUG    | __main__:<module>:84 - Saved watermarked image: ./watermarked/DSC02228.jpg
+2023-06-25 16:56:59.201 | DEBUG    | __main__:<module>:59 - Watermark size: 5999x2844
+2023-06-25 16:56:59.347 | DEBUG    | __main__:<module>:66 - Watermark position: (1, 1156)
+2023-06-25 16:56:59.366 | DEBUG    | __main__:<module>:75 - Text position: (5347, 1111)
+2023-06-25 16:56:59.487 | DEBUG    | __main__:<module>:84 - Saved watermarked image: ./watermarked/DSC07837.jpg
+2023-06-25 16:56:59.650 | DEBUG    | __main__:<module>:59 - Watermark size: 5999x2844
+2023-06-25 16:56:59.801 | DEBUG    | __main__:<module>:66 - Watermark position: (1, 1156)
+2023-06-25 16:56:59.821 | DEBUG    | __main__:<module>:75 - Text position: (5347, 1111)
+2023-06-25 16:56:59.944 | DEBUG    | __main__:<module>:84 - Saved watermarked image: ./watermarked/mariage-376.jpg
+2023-06-25 16:56:59.963 | DEBUG    | __main__:<module>:59 - Watermark size: 1620x767
+2023-06-25 16:56:59.980 | DEBUG    | __main__:<module>:66 - Watermark position: (0, 313)
+2023-06-25 16:56:59.983 | DEBUG    | __main__:<module>:75 - Text position: (967, 268)
+2023-06-25 16:56:59.996 | DEBUG    | __main__:<module>:84 - Saved watermarked image: ./watermarked/DSC06482.jpg
+2023-06-25 16:57:00.009 | DEBUG    | __main__:<module>:59 - Watermark size: 1919x910
+2023-06-25 16:57:00.031 | DEBUG    | __main__:<module>:66 - Watermark position: (1, 370)
+2023-06-25 16:57:00.035 | DEBUG    | __main__:<module>:75 - Text position: (1267, 325)
+2023-06-25 16:57:00.051 | DEBUG    | __main__:<module>:84 - Saved watermarked image: ./watermarked/DSC02245.jpg
+2023-06-25 16:57:00.190 | DEBUG    | __main__:<module>:59 - Watermark size: 5710x2706
+2023-06-25 16:57:00.326 | DEBUG    | __main__:<module>:66 - Watermark position: (0, 1101)
+2023-06-25 16:57:00.344 | DEBUG    | __main__:<module>:75 - Text position: (5057, 1056)
+2023-06-25 16:57:00.458 | DEBUG    | __main__:<module>:84 - Saved watermarked image: ./watermarked/DSC07856.jpg
+2023-06-25 16:57:00.612 | DEBUG    | __main__:<module>:59 - Watermark size: 5892x2793
+2023-06-25 16:57:00.756 | DEBUG    | __main__:<module>:66 - Watermark position: (0, 1135)
+2023-06-25 16:57:00.776 | DEBUG    | __main__:<module>:75 - Text position: (5239, 1090)
+2023-06-25 16:57:00.897 | DEBUG    | __main__:<module>:84 - Saved watermarked image: ./watermarked/DSC07842.jpg
+2023-06-25 16:57:00.914 | DEBUG    | __main__:<module>:59 - Watermark size: 1919x910
+2023-06-25 16:57:00.935 | DEBUG    | __main__:<module>:66 - Watermark position: (1, 370)
+2023-06-25 16:57:00.939 | DEBUG    | __main__:<module>:75 - Text position: (1267, 325)
+2023-06-25 16:57:00.955 | DEBUG    | __main__:<module>:84 - Saved watermarked image: ./watermarked/DSC02118.jpg
+2023-06-25 16:57:00.969 | DEBUG    | __main__:<module>:59 - Watermark size: 1919x910
+2023-06-25 16:57:00.991 | DEBUG    | __main__:<module>:66 - Watermark position: (1, 370)
+2023-06-25 16:57:00.995 | DEBUG    | __main__:<module>:75 - Text position: (1267, 325)
+2023-06-25 16:57:01.012 | DEBUG    | __main__:<module>:84 - Saved watermarked image: ./watermarked/DSC06155.jpg
+2023-06-25 16:57:01.147 | DEBUG    | __main__:<module>:59 - Watermark size: 5849x2772
+2023-06-25 16:57:01.291 | DEBUG    | __main__:<module>:66 - Watermark position: (0, 1127)
+2023-06-25 16:57:01.310 | DEBUG    | __main__:<module>:75 - Text position: (5196, 1082)
+2023-06-25 16:57:01.426 | DEBUG    | __main__:<module>:84 - Saved watermarked image: ./watermarked/DSC07840.jpg
+2023-06-25 16:57:01.443 | DEBUG    | __main__:<module>:59 - Watermark size: 1919x909
+2023-06-25 16:57:01.464 | DEBUG    | __main__:<module>:66 - Watermark position: (0, 371)
+2023-06-25 16:57:01.468 | DEBUG    | __main__:<module>:75 - Text position: (1266, 326)
+2023-06-25 16:57:01.484 | DEBUG    | __main__:<module>:84 - Saved watermarked image: ./watermarked/DSC02121.jpg
+2023-06-25 16:57:01.622 | DEBUG    | __main__:<module>:59 - Watermark size: 5999x2844
+2023-06-25 16:57:01.773 | DEBUG    | __main__:<module>:66 - Watermark position: (1, 1156)
+2023-06-25 16:57:01.793 | DEBUG    | __main__:<module>:75 - Text position: (5347, 1111)
+2023-06-25 16:57:01.913 | DEBUG    | __main__:<module>:84 - Saved watermarked image: ./watermarked/DSC07924.jpg
+2023-06-25 16:57:02.089 | DEBUG    | __main__:<module>:59 - Watermark size: 5857x2776
+2023-06-25 16:57:02.230 | DEBUG    | __main__:<module>:66 - Watermark position: (0, 1129)
+2023-06-25 16:57:02.248 | DEBUG    | __main__:<module>:75 - Text position: (5204, 1084)
+2023-06-25 16:57:02.370 | DEBUG    | __main__:<module>:84 - Saved watermarked image: ./watermarked/DSC07886.jpg
+2023-06-25 16:57:02.534 | DEBUG    | __main__:<module>:59 - Watermark size: 5620x2664
+2023-06-25 16:57:02.665 | DEBUG    | __main__:<module>:66 - Watermark position: (0, 1083)
+2023-06-25 16:57:02.682 | DEBUG    | __main__:<module>:75 - Text position: (4967, 1038)
+2023-06-25 16:57:02.797 | DEBUG    | __main__:<module>:84 - Saved watermarked image: ./watermarked/DSC07853.jpg
+2023-06-25 16:57:02.797 | DEBUG    | __main__:<module>:91 - Displaying image: mariage-443.jpg
+2023-06-25 16:59:04.196 | DEBUG    | __main__:<module>:42 - Removed file: ./watermarked/mariage-443.jpg
+2023-06-25 16:59:04.197 | DEBUG    | __main__:<module>:42 - Removed file: ./watermarked/DSC01977.jpg
+2023-06-25 16:59:04.197 | DEBUG    | __main__:<module>:42 - Removed file: ./watermarked/DSC07865.jpg
+2023-06-25 16:59:04.197 | DEBUG    | __main__:<module>:42 - Removed file: ./watermarked/DSC07870.jpg
+2023-06-25 16:59:04.197 | DEBUG    | __main__:<module>:42 - Removed file: ./watermarked/DSC02248.jpg
+2023-06-25 16:59:04.197 | DEBUG    | __main__:<module>:42 - Removed file: ./watermarked/mariage-390.jpg
+2023-06-25 16:59:04.197 | DEBUG    | __main__:<module>:42 - Removed file: ./watermarked/DSC02212.jpg
+2023-06-25 16:59:04.201 | DEBUG    | __main__:<module>:42 - Removed file: ./watermarked/DSC06477.jpg
+2023-06-25 16:59:04.201 | DEBUG    | __main__:<module>:42 - Removed file: ./watermarked/DSC02228.jpg
+2023-06-25 16:59:04.202 | DEBUG    | __main__:<module>:42 - Removed file: ./watermarked/DSC07837.jpg
+2023-06-25 16:59:04.202 | DEBUG    | __main__:<module>:42 - Removed file: ./watermarked/mariage-376.jpg
+2023-06-25 16:59:04.202 | DEBUG    | __main__:<module>:42 - Removed file: ./watermarked/DSC06482.jpg
+2023-06-25 16:59:04.202 | DEBUG    | __main__:<module>:42 - Removed file: ./watermarked/DSC02245.jpg
+2023-06-25 16:59:04.202 | DEBUG    | __main__:<module>:42 - Removed file: ./watermarked/DSC07856.jpg
+2023-06-25 16:59:04.202 | DEBUG    | __main__:<module>:42 - Removed file: ./watermarked/DSC07842.jpg
+2023-06-25 16:59:04.202 | DEBUG    | __main__:<module>:42 - Removed file: ./watermarked/DSC02118.jpg
+2023-06-25 16:59:04.202 | DEBUG    | __main__:<module>:42 - Removed file: ./watermarked/DSC06155.jpg
+2023-06-25 16:59:04.202 | DEBUG    | __main__:<module>:42 - Removed file: ./watermarked/DSC07840.jpg
+2023-06-25 16:59:04.202 | DEBUG    | __main__:<module>:42 - Removed file: ./watermarked/DSC02121.jpg
+2023-06-25 16:59:04.203 | DEBUG    | __main__:<module>:42 - Removed file: ./watermarked/DSC07924.jpg
+2023-06-25 16:59:04.203 | DEBUG    | __main__:<module>:42 - Removed file: ./watermarked/DSC07886.jpg
+2023-06-25 16:59:04.203 | DEBUG    | __main__:<module>:42 - Removed file: ./watermarked/DSC07853.jpg
+2023-06-25 16:59:04.203 | DEBUG    | __main__:<module>:46 - Picture list: ['mariage-443.jpg', 'DSC01977.jpg', 'DSC07865.jpg', 'DSC07870.jpg', 'DSC02248.jpg', 'mariage-390.jpg', 'DSC02212.jpg', 'DSC06477.jpg', 'DSC02228.jpg', 'DSC07837.jpg', 'mariage-376.jpg', 'DSC06482.jpg', 'DSC02245.jpg', 'DSC07856.jpg', 'DSC07842.jpg', 'DSC02118.jpg', 'DSC06155.jpg', 'DSC07840.jpg', 'DSC02121.jpg', 'DSC07924.jpg', 'DSC07886.jpg', 'DSC07853.jpg']
+2023-06-25 16:59:04.363 | DEBUG    | __main__:<module>:59 - Watermark size: 5999x2844
+2023-06-25 16:59:04.513 | DEBUG    | __main__:<module>:66 - Watermark position: (1, 1156)
+2023-06-25 16:59:04.536 | DEBUG    | __main__:<module>:75 - Text position: (5347, 1111)
+2023-06-25 16:59:04.659 | DEBUG    | __main__:<module>:84 - Saved watermarked image: ./watermarked/mariage-443.jpg
+2023-06-25 16:59:04.675 | DEBUG    | __main__:<module>:59 - Watermark size: 1919x910
+2023-06-25 16:59:04.697 | DEBUG    | __main__:<module>:66 - Watermark position: (1, 370)
+2023-06-25 16:59:04.701 | DEBUG    | __main__:<module>:75 - Text position: (1267, 325)
+2023-06-25 16:59:04.717 | DEBUG    | __main__:<module>:84 - Saved watermarked image: ./watermarked/DSC01977.jpg
+2023-06-25 16:59:04.860 | DEBUG    | __main__:<module>:59 - Watermark size: 5806x2752
+2023-06-25 16:59:04.999 | DEBUG    | __main__:<module>:66 - Watermark position: (0, 1119)
+2023-06-25 16:59:05.018 | DEBUG    | __main__:<module>:75 - Text position: (5153, 1074)
+2023-06-25 16:59:05.138 | DEBUG    | __main__:<module>:84 - Saved watermarked image: ./watermarked/DSC07865.jpg
+2023-06-25 16:59:05.292 | DEBUG    | __main__:<module>:59 - Watermark size: 5778x2739
+2023-06-25 16:59:05.429 | DEBUG    | __main__:<module>:66 - Watermark position: (0, 1113)
+2023-06-25 16:59:05.448 | DEBUG    | __main__:<module>:75 - Text position: (5125, 1068)
+2023-06-25 16:59:05.563 | DEBUG    | __main__:<module>:84 - Saved watermarked image: ./watermarked/DSC07870.jpg
+2023-06-25 16:59:05.579 | DEBUG    | __main__:<module>:59 - Watermark size: 1919x910
+2023-06-25 16:59:05.601 | DEBUG    | __main__:<module>:66 - Watermark position: (1, 370)
+2023-06-25 16:59:05.605 | DEBUG    | __main__:<module>:75 - Text position: (1267, 325)
+2023-06-25 16:59:05.621 | DEBUG    | __main__:<module>:84 - Saved watermarked image: ./watermarked/DSC02248.jpg
+2023-06-25 16:59:05.769 | DEBUG    | __main__:<module>:59 - Watermark size: 5602x2655
+2023-06-25 16:59:05.903 | DEBUG    | __main__:<module>:66 - Watermark position: (0, 1080)
+2023-06-25 16:59:05.921 | DEBUG    | __main__:<module>:75 - Text position: (4949, 1035)
+2023-06-25 16:59:06.033 | DEBUG    | __main__:<module>:84 - Saved watermarked image: ./watermarked/mariage-390.jpg
+2023-06-25 16:59:06.048 | DEBUG    | __main__:<module>:59 - Watermark size: 1919x910
+2023-06-25 16:59:06.070 | DEBUG    | __main__:<module>:66 - Watermark position: (1, 370)
+2023-06-25 16:59:06.074 | DEBUG    | __main__:<module>:75 - Text position: (1267, 325)
+2023-06-25 16:59:06.090 | DEBUG    | __main__:<module>:84 - Saved watermarked image: ./watermarked/DSC02212.jpg
+2023-06-25 16:59:06.237 | DEBUG    | __main__:<module>:59 - Watermark size: 5656x2681
+2023-06-25 16:59:06.373 | DEBUG    | __main__:<module>:66 - Watermark position: (0, 1090)
+2023-06-25 16:59:06.391 | DEBUG    | __main__:<module>:75 - Text position: (5003, 1045)
+2023-06-25 16:59:06.509 | DEBUG    | __main__:<module>:84 - Saved watermarked image: ./watermarked/DSC06477.jpg
+2023-06-25 16:59:06.524 | DEBUG    | __main__:<module>:59 - Watermark size: 1919x910
+2023-06-25 16:59:06.545 | DEBUG    | __main__:<module>:66 - Watermark position: (1, 370)
+2023-06-25 16:59:06.549 | DEBUG    | __main__:<module>:75 - Text position: (1267, 325)
+2023-06-25 16:59:06.565 | DEBUG    | __main__:<module>:84 - Saved watermarked image: ./watermarked/DSC02228.jpg
+2023-06-25 16:59:06.701 | DEBUG    | __main__:<module>:59 - Watermark size: 5999x2844
+2023-06-25 16:59:06.848 | DEBUG    | __main__:<module>:66 - Watermark position: (1, 1156)
+2023-06-25 16:59:06.867 | DEBUG    | __main__:<module>:75 - Text position: (5347, 1111)
+2023-06-25 16:59:06.989 | DEBUG    | __main__:<module>:84 - Saved watermarked image: ./watermarked/DSC07837.jpg
+2023-06-25 16:59:07.157 | DEBUG    | __main__:<module>:59 - Watermark size: 5999x2844
+2023-06-25 16:59:07.304 | DEBUG    | __main__:<module>:66 - Watermark position: (1, 1156)
+2023-06-25 16:59:07.324 | DEBUG    | __main__:<module>:75 - Text position: (5347, 1111)
+2023-06-25 16:59:07.447 | DEBUG    | __main__:<module>:84 - Saved watermarked image: ./watermarked/mariage-376.jpg
+2023-06-25 16:59:07.466 | DEBUG    | __main__:<module>:59 - Watermark size: 1620x767
+2023-06-25 16:59:07.483 | DEBUG    | __main__:<module>:66 - Watermark position: (0, 313)
+2023-06-25 16:59:07.487 | DEBUG    | __main__:<module>:75 - Text position: (967, 268)
+2023-06-25 16:59:07.499 | DEBUG    | __main__:<module>:84 - Saved watermarked image: ./watermarked/DSC06482.jpg
+2023-06-25 16:59:07.513 | DEBUG    | __main__:<module>:59 - Watermark size: 1919x910
+2023-06-25 16:59:07.534 | DEBUG    | __main__:<module>:66 - Watermark position: (1, 370)
+2023-06-25 16:59:07.538 | DEBUG    | __main__:<module>:75 - Text position: (1267, 325)
+2023-06-25 16:59:07.554 | DEBUG    | __main__:<module>:84 - Saved watermarked image: ./watermarked/DSC02245.jpg
+2023-06-25 16:59:07.696 | DEBUG    | __main__:<module>:59 - Watermark size: 5710x2706
+2023-06-25 16:59:07.835 | DEBUG    | __main__:<module>:66 - Watermark position: (0, 1101)
+2023-06-25 16:59:07.853 | DEBUG    | __main__:<module>:75 - Text position: (5057, 1056)
+2023-06-25 16:59:07.968 | DEBUG    | __main__:<module>:84 - Saved watermarked image: ./watermarked/DSC07856.jpg
+2023-06-25 16:59:08.125 | DEBUG    | __main__:<module>:59 - Watermark size: 5892x2793
+2023-06-25 16:59:08.270 | DEBUG    | __main__:<module>:66 - Watermark position: (0, 1135)
+2023-06-25 16:59:08.288 | DEBUG    | __main__:<module>:75 - Text position: (5239, 1090)
+2023-06-25 16:59:08.408 | DEBUG    | __main__:<module>:84 - Saved watermarked image: ./watermarked/DSC07842.jpg
+2023-06-25 16:59:08.425 | DEBUG    | __main__:<module>:59 - Watermark size: 1919x910
+2023-06-25 16:59:08.447 | DEBUG    | __main__:<module>:66 - Watermark position: (1, 370)
+2023-06-25 16:59:08.450 | DEBUG    | __main__:<module>:75 - Text position: (1267, 325)
+2023-06-25 16:59:08.467 | DEBUG    | __main__:<module>:84 - Saved watermarked image: ./watermarked/DSC02118.jpg
+2023-06-25 16:59:08.483 | DEBUG    | __main__:<module>:59 - Watermark size: 1919x910
+2023-06-25 16:59:08.505 | DEBUG    | __main__:<module>:66 - Watermark position: (1, 370)
+2023-06-25 16:59:08.509 | DEBUG    | __main__:<module>:75 - Text position: (1267, 325)
+2023-06-25 16:59:08.525 | DEBUG    | __main__:<module>:84 - Saved watermarked image: ./watermarked/DSC06155.jpg
+2023-06-25 16:59:08.657 | DEBUG    | __main__:<module>:59 - Watermark size: 5849x2772
+2023-06-25 16:59:08.799 | DEBUG    | __main__:<module>:66 - Watermark position: (0, 1127)
+2023-06-25 16:59:08.818 | DEBUG    | __main__:<module>:75 - Text position: (5196, 1082)
+2023-06-25 16:59:08.935 | DEBUG    | __main__:<module>:84 - Saved watermarked image: ./watermarked/DSC07840.jpg
+2023-06-25 16:59:08.951 | DEBUG    | __main__:<module>:59 - Watermark size: 1919x909
+2023-06-25 16:59:08.972 | DEBUG    | __main__:<module>:66 - Watermark position: (0, 371)
+2023-06-25 16:59:08.976 | DEBUG    | __main__:<module>:75 - Text position: (1266, 326)
+2023-06-25 16:59:08.992 | DEBUG    | __main__:<module>:84 - Saved watermarked image: ./watermarked/DSC02121.jpg
+2023-06-25 16:59:09.131 | DEBUG    | __main__:<module>:59 - Watermark size: 5999x2844
+2023-06-25 16:59:09.278 | DEBUG    | __main__:<module>:66 - Watermark position: (1, 1156)
+2023-06-25 16:59:09.297 | DEBUG    | __main__:<module>:75 - Text position: (5347, 1111)
+2023-06-25 16:59:09.419 | DEBUG    | __main__:<module>:84 - Saved watermarked image: ./watermarked/DSC07924.jpg
+2023-06-25 16:59:09.596 | DEBUG    | __main__:<module>:59 - Watermark size: 5857x2776
+2023-06-25 16:59:09.736 | DEBUG    | __main__:<module>:66 - Watermark position: (0, 1129)
+2023-06-25 16:59:09.755 | DEBUG    | __main__:<module>:75 - Text position: (5204, 1084)
+2023-06-25 16:59:09.877 | DEBUG    | __main__:<module>:84 - Saved watermarked image: ./watermarked/DSC07886.jpg
+2023-06-25 16:59:10.043 | DEBUG    | __main__:<module>:59 - Watermark size: 5620x2664
+2023-06-25 16:59:10.175 | DEBUG    | __main__:<module>:66 - Watermark position: (0, 1083)
+2023-06-25 16:59:10.193 | DEBUG    | __main__:<module>:75 - Text position: (4967, 1038)
+2023-06-25 16:59:10.309 | DEBUG    | __main__:<module>:84 - Saved watermarked image: ./watermarked/DSC07853.jpg
+2023-06-25 16:59:10.309 | DEBUG    | __main__:<module>:91 - Displaying image: mariage-443.jpg
+2023-06-25 17:02:42.383 | DEBUG    | __main__:<module>:46 - Picture list: ['mariage-443.jpg', 'DSC01977.jpg', 'DSC07865.jpg', 'DSC07870.jpg', 'DSC02248.jpg', 'mariage-390.jpg', 'DSC02212.jpg', 'DSC06477.jpg', 'DSC02228.jpg', 'DSC07837.jpg', 'mariage-376.jpg', 'DSC06482.jpg', 'DSC02245.jpg', 'DSC07856.jpg', 'DSC07842.jpg', 'DSC02118.jpg', 'DSC06155.jpg', 'DSC07840.jpg', 'DSC02121.jpg', 'DSC07924.jpg', 'DSC07886.jpg', 'DSC07853.jpg']
+2023-06-25 17:02:42.549 | DEBUG    | __main__:<module>:59 - Watermark size: 5999x2844
+2023-06-25 17:03:15.047 | DEBUG    | __main__:<module>:46 - Picture list: ['mariage-443.jpg', 'DSC01977.jpg', 'DSC07865.jpg', 'DSC07870.jpg', 'DSC02248.jpg', 'mariage-390.jpg', 'DSC02212.jpg', 'DSC06477.jpg', 'DSC02228.jpg', 'DSC07837.jpg', 'mariage-376.jpg', 'DSC06482.jpg', 'DSC02245.jpg', 'DSC07856.jpg', 'DSC07842.jpg', 'DSC02118.jpg', 'DSC06155.jpg', 'DSC07840.jpg', 'DSC02121.jpg', 'DSC07924.jpg', 'DSC07886.jpg', 'DSC07853.jpg']
+2023-06-25 17:03:21.126 | DEBUG    | __main__:<module>:91 - Displaying image: mariage-443.jpg
+2023-06-25 17:05:34.658 | DEBUG    | __main__:<module>:42 - Removed file: ./watermarked/mariage-443.jpg
+2023-06-25 17:05:34.658 | DEBUG    | __main__:<module>:42 - Removed file: ./watermarked/DSC01977.jpg
+2023-06-25 17:05:34.658 | DEBUG    | __main__:<module>:42 - Removed file: ./watermarked/DSC07865.jpg
+2023-06-25 17:05:34.658 | DEBUG    | __main__:<module>:42 - Removed file: ./watermarked/DSC07870.jpg
+2023-06-25 17:05:34.658 | DEBUG    | __main__:<module>:42 - Removed file: ./watermarked/DSC02248.jpg
+2023-06-25 17:05:34.658 | DEBUG    | __main__:<module>:42 - Removed file: ./watermarked/mariage-390.jpg
+2023-06-25 17:05:34.658 | DEBUG    | __main__:<module>:42 - Removed file: ./watermarked/DSC02212.jpg
+2023-06-25 17:05:34.659 | DEBUG    | __main__:<module>:42 - Removed file: ./watermarked/DSC06477.jpg
+2023-06-25 17:05:34.659 | DEBUG    | __main__:<module>:42 - Removed file: ./watermarked/DSC02228.jpg
+2023-06-25 17:05:34.659 | DEBUG    | __main__:<module>:42 - Removed file: ./watermarked/DSC07837.jpg
+2023-06-25 17:05:34.659 | DEBUG    | __main__:<module>:42 - Removed file: ./watermarked/mariage-376.jpg
+2023-06-25 17:05:34.659 | DEBUG    | __main__:<module>:42 - Removed file: ./watermarked/DSC06482.jpg
+2023-06-25 17:05:34.659 | DEBUG    | __main__:<module>:42 - Removed file: ./watermarked/DSC02245.jpg
+2023-06-25 17:05:34.660 | DEBUG    | __main__:<module>:42 - Removed file: ./watermarked/DSC07856.jpg
+2023-06-25 17:05:34.660 | DEBUG    | __main__:<module>:42 - Removed file: ./watermarked/DSC07842.jpg
+2023-06-25 17:05:34.660 | DEBUG    | __main__:<module>:42 - Removed file: ./watermarked/DSC02118.jpg
+2023-06-25 17:05:34.660 | DEBUG    | __main__:<module>:42 - Removed file: ./watermarked/DSC06155.jpg
+2023-06-25 17:05:34.660 | DEBUG    | __main__:<module>:42 - Removed file: ./watermarked/DSC07840.jpg
+2023-06-25 17:05:34.660 | DEBUG    | __main__:<module>:42 - Removed file: ./watermarked/DSC02121.jpg
+2023-06-25 17:05:34.660 | DEBUG    | __main__:<module>:42 - Removed file: ./watermarked/DSC07924.jpg
+2023-06-25 17:05:34.660 | DEBUG    | __main__:<module>:42 - Removed file: ./watermarked/DSC07886.jpg
+2023-06-25 17:05:34.661 | DEBUG    | __main__:<module>:42 - Removed file: ./watermarked/DSC07853.jpg
+2023-06-25 17:05:34.661 | DEBUG    | __main__:<module>:46 - Picture list: ['mariage-443.jpg', 'DSC01977.jpg', 'DSC07865.jpg', 'DSC07870.jpg', 'DSC02248.jpg', 'mariage-390.jpg', 'DSC02212.jpg', 'DSC06477.jpg', 'DSC02228.jpg', 'DSC07837.jpg', 'mariage-376.jpg', 'DSC06482.jpg', 'DSC02245.jpg', 'DSC07856.jpg', 'DSC07842.jpg', 'DSC02118.jpg', 'DSC06155.jpg', 'DSC07840.jpg', 'DSC02121.jpg', 'DSC07924.jpg', 'DSC07886.jpg', 'DSC07853.jpg']
+2023-06-25 17:05:34.818 | DEBUG    | __main__:<module>:59 - Watermark size: 5999x2844
+2023-06-25 17:05:34.970 | DEBUG    | __main__:<module>:66 - Watermark position: (1, 1156)
+2023-06-25 17:05:34.990 | DEBUG    | __main__:<module>:75 - Text position: (5347, 1111)
+2023-06-25 17:05:35.114 | DEBUG    | __main__:<module>:84 - Saved watermarked image: ./watermarked/mariage-443.jpg
+2023-06-25 17:05:35.130 | DEBUG    | __main__:<module>:59 - Watermark size: 1919x910
+2023-06-25 17:05:35.154 | DEBUG    | __main__:<module>:66 - Watermark position: (1, 370)
+2023-06-25 17:05:35.158 | DEBUG    | __main__:<module>:75 - Text position: (1267, 325)
+2023-06-25 17:05:35.174 | DEBUG    | __main__:<module>:84 - Saved watermarked image: ./watermarked/DSC01977.jpg
+2023-06-25 17:05:35.317 | DEBUG    | __main__:<module>:59 - Watermark size: 5806x2752
+2023-06-25 17:05:35.456 | DEBUG    | __main__:<module>:66 - Watermark position: (0, 1119)
+2023-06-25 17:05:35.475 | DEBUG    | __main__:<module>:75 - Text position: (5153, 1074)
+2023-06-25 17:05:35.590 | DEBUG    | __main__:<module>:84 - Saved watermarked image: ./watermarked/DSC07865.jpg
+2023-06-25 17:05:35.742 | DEBUG    | __main__:<module>:59 - Watermark size: 5778x2739
+2023-06-25 17:05:35.883 | DEBUG    | __main__:<module>:66 - Watermark position: (0, 1113)
+2023-06-25 17:05:35.901 | DEBUG    | __main__:<module>:75 - Text position: (5125, 1068)
+2023-06-25 17:05:36.018 | DEBUG    | __main__:<module>:84 - Saved watermarked image: ./watermarked/DSC07870.jpg
+2023-06-25 17:05:36.033 | DEBUG    | __main__:<module>:59 - Watermark size: 1919x910
+2023-06-25 17:05:36.055 | DEBUG    | __main__:<module>:66 - Watermark position: (1, 370)
+2023-06-25 17:05:36.059 | DEBUG    | __main__:<module>:75 - Text position: (1267, 325)
+2023-06-25 17:05:36.075 | DEBUG    | __main__:<module>:84 - Saved watermarked image: ./watermarked/DSC02248.jpg
+2023-06-25 17:05:36.222 | DEBUG    | __main__:<module>:59 - Watermark size: 5602x2655
+2023-06-25 17:05:36.352 | DEBUG    | __main__:<module>:66 - Watermark position: (0, 1080)
+2023-06-25 17:05:36.370 | DEBUG    | __main__:<module>:75 - Text position: (4949, 1035)
+2023-06-25 17:05:36.479 | DEBUG    | __main__:<module>:84 - Saved watermarked image: ./watermarked/mariage-390.jpg
+2023-06-25 17:05:36.494 | DEBUG    | __main__:<module>:59 - Watermark size: 1919x910
+2023-06-25 17:05:36.516 | DEBUG    | __main__:<module>:66 - Watermark position: (1, 370)
+2023-06-25 17:05:36.519 | DEBUG    | __main__:<module>:75 - Text position: (1267, 325)
+2023-06-25 17:05:36.535 | DEBUG    | __main__:<module>:84 - Saved watermarked image: ./watermarked/DSC02212.jpg
+2023-06-25 17:05:36.679 | DEBUG    | __main__:<module>:59 - Watermark size: 5656x2681
+2023-06-25 17:05:36.810 | DEBUG    | __main__:<module>:66 - Watermark position: (0, 1090)
+2023-06-25 17:05:36.828 | DEBUG    | __main__:<module>:75 - Text position: (5003, 1045)
+2023-06-25 17:05:36.944 | DEBUG    | __main__:<module>:84 - Saved watermarked image: ./watermarked/DSC06477.jpg
+2023-06-25 17:05:36.959 | DEBUG    | __main__:<module>:59 - Watermark size: 1919x910
+2023-06-25 17:05:36.980 | DEBUG    | __main__:<module>:66 - Watermark position: (1, 370)
+2023-06-25 17:05:36.984 | DEBUG    | __main__:<module>:75 - Text position: (1267, 325)
+2023-06-25 17:05:37.000 | DEBUG    | __main__:<module>:84 - Saved watermarked image: ./watermarked/DSC02228.jpg
+2023-06-25 17:05:37.135 | DEBUG    | __main__:<module>:59 - Watermark size: 5999x2844
+2023-06-25 17:05:37.282 | DEBUG    | __main__:<module>:66 - Watermark position: (1, 1156)
+2023-06-25 17:05:37.301 | DEBUG    | __main__:<module>:75 - Text position: (5347, 1111)
+2023-06-25 17:05:37.423 | DEBUG    | __main__:<module>:84 - Saved watermarked image: ./watermarked/DSC07837.jpg
+2023-06-25 17:05:37.586 | DEBUG    | __main__:<module>:59 - Watermark size: 5999x2844
+2023-06-25 17:05:37.735 | DEBUG    | __main__:<module>:66 - Watermark position: (1, 1156)
+2023-06-25 17:05:37.755 | DEBUG    | __main__:<module>:75 - Text position: (5347, 1111)
+2023-06-25 17:05:37.880 | DEBUG    | __main__:<module>:84 - Saved watermarked image: ./watermarked/mariage-376.jpg
+2023-06-25 17:05:37.900 | DEBUG    | __main__:<module>:59 - Watermark size: 1620x767
+2023-06-25 17:05:37.918 | DEBUG    | __main__:<module>:66 - Watermark position: (0, 313)
+2023-06-25 17:05:37.922 | DEBUG    | __main__:<module>:75 - Text position: (967, 268)
+2023-06-25 17:05:37.935 | DEBUG    | __main__:<module>:84 - Saved watermarked image: ./watermarked/DSC06482.jpg
+2023-06-25 17:05:37.949 | DEBUG    | __main__:<module>:59 - Watermark size: 1919x910
+2023-06-25 17:05:37.970 | DEBUG    | __main__:<module>:66 - Watermark position: (1, 370)
+2023-06-25 17:05:37.974 | DEBUG    | __main__:<module>:75 - Text position: (1267, 325)
+2023-06-25 17:05:37.990 | DEBUG    | __main__:<module>:84 - Saved watermarked image: ./watermarked/DSC02245.jpg
+2023-06-25 17:05:38.129 | DEBUG    | __main__:<module>:59 - Watermark size: 5710x2706
+2023-06-25 17:05:38.264 | DEBUG    | __main__:<module>:66 - Watermark position: (0, 1101)
+2023-06-25 17:05:38.282 | DEBUG    | __main__:<module>:75 - Text position: (5057, 1056)
+2023-06-25 17:05:38.394 | DEBUG    | __main__:<module>:84 - Saved watermarked image: ./watermarked/DSC07856.jpg
+2023-06-25 17:05:38.547 | DEBUG    | __main__:<module>:59 - Watermark size: 5892x2793
+2023-06-25 17:05:38.689 | DEBUG    | __main__:<module>:66 - Watermark position: (0, 1135)
+2023-06-25 17:05:38.707 | DEBUG    | __main__:<module>:75 - Text position: (5239, 1090)
+2023-06-25 17:05:38.828 | DEBUG    | __main__:<module>:84 - Saved watermarked image: ./watermarked/DSC07842.jpg
+2023-06-25 17:05:38.845 | DEBUG    | __main__:<module>:59 - Watermark size: 1919x910
+2023-06-25 17:05:38.866 | DEBUG    | __main__:<module>:66 - Watermark position: (1, 370)
+2023-06-25 17:05:38.870 | DEBUG    | __main__:<module>:75 - Text position: (1267, 325)
+2023-06-25 17:05:38.886 | DEBUG    | __main__:<module>:84 - Saved watermarked image: ./watermarked/DSC02118.jpg
+2023-06-25 17:05:38.901 | DEBUG    | __main__:<module>:59 - Watermark size: 1919x910
+2023-06-25 17:05:38.922 | DEBUG    | __main__:<module>:66 - Watermark position: (1, 370)
+2023-06-25 17:05:38.926 | DEBUG    | __main__:<module>:75 - Text position: (1267, 325)
+2023-06-25 17:05:38.942 | DEBUG    | __main__:<module>:84 - Saved watermarked image: ./watermarked/DSC06155.jpg
+2023-06-25 17:05:39.074 | DEBUG    | __main__:<module>:59 - Watermark size: 5849x2772
+2023-06-25 17:05:39.215 | DEBUG    | __main__:<module>:66 - Watermark position: (0, 1127)
+2023-06-25 17:05:39.234 | DEBUG    | __main__:<module>:75 - Text position: (5196, 1082)
+2023-06-25 17:05:39.351 | DEBUG    | __main__:<module>:84 - Saved watermarked image: ./watermarked/DSC07840.jpg
+2023-06-25 17:05:39.367 | DEBUG    | __main__:<module>:59 - Watermark size: 1919x909
+2023-06-25 17:05:39.389 | DEBUG    | __main__:<module>:66 - Watermark position: (0, 371)
+2023-06-25 17:05:39.393 | DEBUG    | __main__:<module>:75 - Text position: (1266, 326)
+2023-06-25 17:05:39.409 | DEBUG    | __main__:<module>:84 - Saved watermarked image: ./watermarked/DSC02121.jpg
+2023-06-25 17:05:39.547 | DEBUG    | __main__:<module>:59 - Watermark size: 5999x2844
+2023-06-25 17:05:39.694 | DEBUG    | __main__:<module>:66 - Watermark position: (1, 1156)
+2023-06-25 17:05:39.714 | DEBUG    | __main__:<module>:75 - Text position: (5347, 1111)
+2023-06-25 17:05:39.839 | DEBUG    | __main__:<module>:84 - Saved watermarked image: ./watermarked/DSC07924.jpg
+2023-06-25 17:05:40.015 | DEBUG    | __main__:<module>:59 - Watermark size: 5857x2776
+2023-06-25 17:05:40.156 | DEBUG    | __main__:<module>:66 - Watermark position: (0, 1129)
+2023-06-25 17:05:40.175 | DEBUG    | __main__:<module>:75 - Text position: (5204, 1084)
+2023-06-25 17:05:40.297 | DEBUG    | __main__:<module>:84 - Saved watermarked image: ./watermarked/DSC07886.jpg
+2023-06-25 17:05:40.466 | DEBUG    | __main__:<module>:59 - Watermark size: 5620x2664
+2023-06-25 17:05:40.597 | DEBUG    | __main__:<module>:66 - Watermark position: (0, 1083)
+2023-06-25 17:05:40.615 | DEBUG    | __main__:<module>:75 - Text position: (4967, 1038)
+2023-06-25 17:05:40.731 | DEBUG    | __main__:<module>:84 - Saved watermarked image: ./watermarked/DSC07853.jpg
+2023-06-25 17:05:40.732 | DEBUG    | __main__:<module>:93 - Displaying image: mariage-443.jpg
+2023-06-25 17:05:40.778 | DEBUG    | __main__:<module>:106 - Slideshow started
+2023-06-25 17:05:40.779 | DEBUG    | __main__:<module>:118 - Slideshow paused

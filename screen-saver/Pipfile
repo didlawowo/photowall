@@ -7,6 +7,7 @@ name = "pypi"
 pygame = "*"
 Pillow = "*"
 python-dotenv = "*"
+loguru = "*"
 
 [dev-packages]
 
