@@ -20,7 +20,7 @@ def _clear_history():
     for f in files:
         # logger.debug(f)
         os.unlink(os.path.join(WALL_FOLDER, f))
-    logger.success('Photo Wall dir cleared')
+    logger.success(f'Photo Wall dir {WALL_FOLDER} cleared')
 
 
 def _diff(first, second):
@@ -193,7 +193,8 @@ if __name__ == '__main__':
     from dotenv import load_dotenv
 
     load_dotenv()
-    _clear_history()
-    app.run(host='0.0.0.0', port=5000, debug=True)
     c = Compress()
     c.init_app(app)
+
+    _clear_history()
+    app.run(host='0.0.0.0', port=5000, debug=True)

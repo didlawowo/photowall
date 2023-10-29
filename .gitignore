@@ -4,12 +4,13 @@ venv/
 .venv/
 
 *.pyc
-static/photowall/*
-static/upload/*
-static/logo_client/*
+photowall/static/photowall/*
+photowall/static/upload/*
+photowall/static/logo_client/*
 
 .DS_Store
 conf.py
 .env
  
 .vscode/*
+screen-saver/watermarked/*
